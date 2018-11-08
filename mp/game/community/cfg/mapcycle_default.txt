@@ -1,0 +1,26 @@
+// Default mapcycle file for Counter-Strike.
+//
+// DO NOT MODIFY THIS FILE!
+// Instead, copy it to mapcycle.txt and modify that file.  If no custom mapcycle.txt file is found,
+// this file will be used as the default.
+//
+// Also, note that the "mapcyclefile" convar can be used to specify a particular mapcycle file.
+
+cs_italy
+de_dust
+de_aztec
+de_cbble
+cs_office
+de_chateau
+de_dust2
+de_piranesi
+cs_havana
+de_prodigy
+cs_compound
+de_train
+de_tides
+de_port
+de_inferno
+cs_assault
+de_nuke
+cs_militia

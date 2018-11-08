@@ -1,0 +1,7471 @@
+"Haptics"
+{
+	"Movement"
+	{
+		"BasePlayer"
+		{	
+			"isEffect" "1"
+			"group"			"movement"
+			"effecttype"		"Avatar"
+			"msSampleRate" 		"20"
+			"msSmoothing"		"10"
+			"storedSamples"		"3"
+			"gameMeterScale" 	"1"
+			"VelocityScale" 	"-0.00025"
+		}
+
+		"BaseVehicle"
+		{	
+			"isEffect" "1"
+			"group"			"movement"
+			"effecttype"		"Avatar"
+			"msSampleRate" 		"5"
+			"storedSamples"		"5"
+			"gameMeterScale" 	"1"
+			"VelocityScale" 	"-0.0004"
+		}
+	}
+	"Sounds"
+	{ 
+		"Default.ClipEmpty_Pistol"
+		{
+				"isEffect" "1"
+				"group" "recoil"
+
+				"msRamp" "0"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "8"
+				}
+		}
+		"Default.ClipEmpty_Rifle"
+		{
+				"isEffect" "1"
+				"group" "recoil"
+
+				"msRamp" "0"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "8"
+				}
+		}
+		"Weapon_knife.Stab"//stab
+		{
+				"isEffect"	"1"
+				"group" "movement"
+				"msRamp" "150"
+				"msSustain" "0"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+	
+				"force"
+				{
+					"x" "-1"
+					"y" "0"
+					"z" "-1.5"
+				}
+		}
+	}
+	"Weapons"
+	{
+		"weapon_elite"
+		{
+			"Activities"
+			{
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+					
+				"group" "movement"
+				"msRamp" "200"
+				"msSustain" "60"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "1"
+				}
+				"chain"//handforward
+				{
+				"msdelay" "400"
+				"msRamp" "220"
+				"msSustain" "40"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "0"
+				}
+				}
+				}
+				"ACT_VM_RELOAD" //dual pistol reload
+				{
+				"isEffect"	"1"
+				"group" "movement"
+
+				"msRamp" "300"
+				"msSustain" "100"
+				"msDecay" "50"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1"
+					"y" "-1.4"
+					"z" "-0.5"
+				}
+				"chain"//clip drop
+				{
+				"msdelay" "400"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-2"
+					"z" "0"
+				}
+				"chain"//clip slide
+				{
+				"msdelay" "1400"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "2"
+					"z" "0"
+				}
+				"chain"//clip hit
+				{
+				"msdelay" "1600"
+				"msRamp" "20"
+				"msSustain" "0"
+				"msDecay" "10"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-1"
+					"y" "1.5"
+					"z" "0"
+				}
+				"chain"//click
+				{
+				"msdelay" "1635"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "-3"
+					"y" "3.5"
+					"z" "0"
+				}
+				"chain"//finger hitting gun
+				{
+				"msdelay" "1600"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+
+					"x" "-0.75"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//clip slide
+				{
+				"msdelay" "2350"
+				"msRamp" "120"
+				"msSustain" "30"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "2"
+					"z" "0"
+				}
+				"chain"//clip hit
+				{
+				"msdelay" "2600"
+				"msRamp" "20"
+				"msSustain" "0"
+				"msDecay" "10"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "1.5"
+					"z" "0"
+				}
+				"chain"//click
+				{
+				"msdelay" "2635"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "2.5"
+					"y" "3"
+					"z" "0"
+				}
+				"chain"//finger hitting gun
+				{
+				"msdelay" "2635"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+
+					"x" "0.75"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//handforward
+				{
+				"msdelay" "3000"
+				"msRamp" "120"
+				"msSustain" "10"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1.5"
+					"z" "0.5"
+				}
+				"chain"//slide
+				{
+				"msdelay" "3200"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-2.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "3235"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "00"
+					"y" "0"
+					"z" "-3"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+
+			"AnimationEvents"
+			{
+			"5001" //pistol muzzle
+			{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "11"
+				}
+			
+
+			}
+			}
+		}
+		"weapon_usp"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw unsilenced
+				{
+				"isEffect"	"1"
+					
+				"msdelay" "465"
+				"msRamp" "50"
+				"msSustain" "30"
+				"msDecay" "15"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.25"
+					"y" "0"
+					"z" "1"
+				}
+				"chain"//slide
+				{
+				"msdelay" "550"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.25"
+					"y" "0"
+					"z" "2"
+				}
+				"chain"//click
+				{
+				"msdelay" "590"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.40"
+					"y" "0"
+					"z" "0.65"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "700"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.35"
+					"y" "-0.40"
+					"z" "-0.65"
+				}
+				"chain"//click
+				{
+				"msdelay" "750"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.40"
+					"y" "-0.20"
+					"z" "-0.20"
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_DRAW_SILENCED"//draw silenced
+				{
+				"isEffect"	"1"
+					
+				"msdelay" "465"
+				"msRamp" "50"
+				"msSustain" "30"
+				"msDecay" "15"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.25"
+					"y" "0"
+					"z" "1"
+				}
+				"chain"//slide
+				{
+				"msdelay" "550"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.25"
+					"y" "0"
+					"z" "2"
+				}
+				"chain"//click
+				{
+				"msdelay" "590"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0"
+					"z" "4"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "700"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.35"
+					"y" "-0.40"
+					"z" "-0.65"
+				}
+				"chain"//click
+				{
+				"msdelay" "750"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "1.75"
+					"y" "-0.5"
+					"z" "-1.4"
+				}			
+				}
+				}
+				}
+				}
+				}
+			
+				"ACT_VM_ATTACH_SILENCER"//silencer on
+				{
+					"isEffect"	"1"
+					
+					"group" "movement"
+					"msRamp" "200"
+					"msSustain" "60"
+					"msDecay" "60"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "-1"
+						"z" "2"
+					}
+					"chain"//handforward
+					{
+					"msdelay" "500"
+					"msRamp" "120"
+					"msSustain" "20"
+					"msDecay" "30"
+					"special" "SPLINEENVELOPE"
+
+					"force"
+					{
+						"x" "0"
+						"y" "0.5"
+						"z" "0"
+					}
+					"chain"//hit barrel
+					{
+					"msdelay" "900"
+					"msRamp" "120"
+					"msSustain" "20"
+					"msDecay" "30"
+
+					"force"
+					{
+						"x" "0"
+						"y" "0.5"
+						"z" "2.25"
+					}
+					"chain"//roll
+					{
+					"msdelay" "1250"
+					"msRamp" "60"
+					"msSustain" "20"
+					"msDecay" "60"
+					"special" "NOISEENVELOPE4X"
+
+					"force"
+					{
+						"x" "-0.7"
+						"y" "1.1"
+						"z" "-0.1"
+					}
+					"chain"//roll
+					{
+					"msdelay" "1550"
+					"msRamp" "60"
+					"msSustain" "20"
+					"msDecay" "60"
+					"special" "NOISEENVELOPE4X"
+
+					"force"
+					{
+						"x" "-0.9"
+						"y" "1.3"
+						"z" "-0.1"
+					}
+					"chain"//roll
+					{
+					"msdelay" "1850"
+					"msRamp" "60"
+					"msSustain" "20"
+					"msDecay" "60"
+					"special" "NOISEENVELOPE4X"
+
+					"force"
+					{
+						"x" "-0.9"
+						"y" "1.8"
+						"z" "-0.1"
+					}
+					"chain"//roll
+					{
+					"msdelay" "2150"
+					"msRamp" "60"
+					"msSustain" "20"
+					"msDecay" "60"
+					"special" "NOISEENVELOPE4X"
+
+					"force"
+					{
+						"x" "-1.1"
+						"y" "1.9"
+						"z" "-0.1"
+					}
+					"chain"//move back
+					{
+					"msDelay" "2300"
+					"msRamp" "400"
+					"msSustain" "60"
+					"msDecay" "60"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "1"
+						"z" "-1"
+					}
+					}
+					}
+					}
+					}
+					}
+					}
+					}
+				}
+
+				"ACT_VM_DETACH_SILENCER"//silencer off
+				{
+					"isEffect"	"1"
+					
+					"group" "movement"
+					"msRamp" "200"
+					"msSustain" "60"
+					"msDecay" "60"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "-1"
+						"z" "2"
+					}
+					"chain"//handforward
+					{
+					"msdelay" "500"
+					"msRamp" "120"
+					"msSustain" "20"
+					"msDecay" "30"
+					"special" "SPLINEENVELOPE"
+
+					"force"
+					{
+						"x" "0"
+						"y" "0.5"
+						"z" "0"
+					}
+					"chain"//hit barrel
+					{
+					"msdelay" "700"
+					"msRamp" "120"
+					"msSustain" "20"
+					"msDecay" "30"
+
+					"force"
+					{
+						"x" "0"
+						"y" "-0.5"
+						"z" "-2"
+					}
+					"chain"//roll
+					{
+					"msdelay" "800"
+					"msRamp" "60"
+					"msSustain" "20"
+					"msDecay" "60"
+					"special" "NOISEENVELOPE4X"
+
+					"force"
+					{
+						"x" "-1.1"
+						"y" "1.1"
+						"z" "-0.1"
+					}
+					"chain"//roll
+					{
+					"msdelay" "1100"
+					"msRamp" "60"
+					"msSustain" "20"
+					"msDecay" "60"
+					"special" "NOISEENVELOPE4X"
+
+					"force"
+					{
+						"x" "-0.9"
+						"y" "1.1"
+						"z" "-0.1"
+					}
+					"chain"//roll
+					{
+					"msdelay" "1400"
+					"msRamp" "60"
+					"msSustain" "20"
+					"msDecay" "60"
+					"special" "NOISEENVELOPE4X"
+
+					"force"
+					{
+						"x" "-0.8"
+						"y" "0.7"
+						"z" "-0.1"
+					}
+					"chain"//roll
+					{
+					"msdelay" "1700"
+					"msRamp" "60"
+					"msSustain" "20"
+					"msDecay" "60"
+					"special" "NOISEENVELOPE4X"
+
+					"force"
+					{
+						"x" "-0.6"
+						"y" "0.5"
+						"z" "-0.1"
+					}
+					"chain"//move back
+					{
+					"msDelay" "2370"
+					"msRamp" "200"
+					"msSustain" "60"
+					"msDecay" "60"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "1"
+						"z" "-1"
+					}
+					}
+					}
+					}
+					}
+					}
+					}
+					}
+				}
+				"ACT_VM_RELOAD"//reload unsilenced pistol
+				{
+
+				"isEffect"	"1"
+				"group" "movement"
+
+				"msdelay" "75"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "110"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "3"
+				}
+				"chain"//clip released
+				{
+				"msdelay" "400"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1.2"
+					"z" "0"
+				}
+				"chain"//clip inserted
+				{
+				"msdelay" "1100"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE"
+
+				"force"
+				{
+					"x" "1.5"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//hand hitting gun
+				{
+				"msdelay" "1550"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+
+					"x" "1"
+					"y" "1.5"
+					"z" "0"
+				}
+				"chain"//clip clicked in
+				{
+				"msdelay" "1550"
+				"msRamp" "20"
+				"msSustain" "0"
+				"msDecay" "10"
+				"special" "NOISEENVELOPE"
+
+				"force"
+				{
+
+					"x" "1"
+					"y" "2"
+					"z" "0"
+				}
+				"chain"//click
+				{
+				"msdelay" "1585"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "2"
+					"y" "4"
+					"z" "0"
+				}
+				"chain"//slide
+				{
+				"msdelay" "2300"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "2350"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-4"
+				}
+				"chain"//handforward
+				{
+				"msdelay" "2300"
+				"msRamp" "120"
+				"msSustain" "10"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "0.5"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_RELOAD_SILENCED"//reload silenced pistol
+				{
+
+				"isEffect"	"1"
+				"group" "movement"
+
+				"msdelay" "75"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "110"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "3"
+				}
+				"chain"//clip released
+				{
+				"msdelay" "400"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1.2"
+					"z" "0"
+				}
+				"chain"//clip inserted
+				{
+				"msdelay" "1100"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE"
+
+				"force"
+				{
+					"x" "1.5"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//hand hitting gun
+				{
+				"msdelay" "1550"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+
+					"x" "1"
+					"y" "1.5"
+					"z" "0"
+				}
+				"chain"//clip clicked in
+				{
+				"msdelay" "1550"
+				"msRamp" "20"
+				"msSustain" "0"
+				"msDecay" "10"
+				"special" "NOISEENVELOPE"
+
+				"force"
+				{
+
+					"x" "1"
+					"y" "2"
+					"z" "0"
+				}
+				"chain"//click
+				{
+				"msdelay" "1585"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "2"
+					"y" "4"
+					"z" "0"
+				}
+				"chain"//slide
+				{
+				"msdelay" "2300"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "2350"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-4"
+				}
+				"chain"//handforward
+				{
+				"msdelay" "2300"
+				"msRamp" "120"
+				"msSustain" "10"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "0.5"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+			"5001" //pistol muzzle
+			{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "11"
+				}
+			
+
+			}
+			}
+		}
+		"weapon_p228"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+					
+				"group" "movement"
+				"msRamp" "200"
+				"msSustain" "60"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "1"
+				}
+				"chain"//pull slide with hand
+				{
+				"msdelay" "350"
+				"msRamp" "20"
+				"msSustain" "10"
+				"msDecay" "5"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0"
+					"z" "1.25"
+				}
+				"chain"//slide
+				{
+				"msdelay" "450"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "485"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0"
+					"z" "0.75"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "0"
+					"z" "-1.25"
+				}
+				"chain"//click
+				{
+				"msdelay" "645"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.40"
+					"y" "0"
+					"z" "-0.60"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_RELOAD"//reload one pistol
+				{
+				"isEffect"      "1"
+				"group" "movement"
+
+				"msdelay" "75"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "-0.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "110"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "2"
+					"y" "0"
+					"z" "1.25"
+				}
+				"chain"//shake gun
+				{
+				"msdelay" "300"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.25"
+					"y" "1.25"
+					"z" "0"
+				}
+				"chain"//shake gun
+				{
+				"msdelay" "365"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-1.25"
+					"z" "0"
+				}
+				"chain"//clip released
+				{
+				"msdelay" "620"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "20"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1.65"
+					"z" "0"
+				}
+				"chain"//clip inserted
+				{
+				"msdelay" "1300"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1.5"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//hand hitting gun
+				{
+				"msdelay" "1800"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+
+					"x" "1"
+					"y" "1.5"
+					"z" "0"
+				}
+				"chain"//clip clicked in
+				{
+				"msdelay" "1800"
+				"msRamp" "20"
+				"msSustain" "0"
+				"msDecay" "10"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+
+					"x" "1"
+					"y" "2"
+					"z" "0"
+				}
+				"chain"//click
+				{
+				"msdelay" "1845"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "2.5"
+					"y" "3.5"
+					"z" "0"
+				}
+				"chain"//handforward
+				{
+				"msdelay" "2300"
+				"msRamp" "120"
+				"msSustain" "10"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "0.5"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "2400"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "0"
+					"z" "-1.25"
+				}
+				"chain"//click
+				{
+				"msdelay" "2445"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "-2"
+					"y" "0"
+					"z" "-3"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+			"5001" //pistol muzzle
+			{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "11"
+				}
+			
+
+			}
+			}
+		}
+		"weapon_fiveseven"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+					
+					"isEffect"	"1"
+					"group" "movement"
+					"msRamp" "200"
+					"msSustain" "60"
+					"msDecay" "60"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "1"
+						"z" "1"
+					}
+				"chain"//pull slide
+				{
+				"msdelay" "400"
+				"msRamp" "50"
+				"msSustain" "25"
+				"msDecay" "15"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain"//slide
+				{
+				"msdelay" "500"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "545"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "0.90"
+				}
+				"chain"//slide
+				{
+				"msdelay" "675"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-1.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "705"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-0.60"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_RELOAD"//reload one pistol
+				{
+				"isEffect"      "1"
+				"group" "movement"
+
+				"msdelay" "75"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "-0.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "110"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "2"
+					"y" "0"
+					"z" "1.25"
+				}
+				"chain"//clip released
+				{
+				"msdelay" "400"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1.8"
+					"z" "0"
+				}
+				"chain"//attempting clip insertion
+				{
+				"msdelay" "1300"
+				"msRamp" "120"
+				"msSustain" "10"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1.5"
+					"z" "-0.5"
+				}
+				"chain"//attempting clip insertion
+				{
+				"msdelay" "1450"
+				"msRamp" "120"
+				"msSustain" "10"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1.5"
+					"z" "0.5"
+				}
+				"chain"//clip inserted
+				{
+				"msdelay" "1650"
+				"msRamp" "100"
+				"msSustain" "30"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "2"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//hand hitting gun
+				{
+				"msdelay" "2050"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+
+					"x" "1.5"
+					"y" "2"
+					"z" "0"
+				}
+				"chain"//clip clicked in
+				{
+				"msdelay" "2050"
+				"msRamp" "20"
+				"msSustain" "0"
+				"msDecay" "10"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+
+					"x" "1.5"
+					"y" "2.5"
+					"z" "0"
+				}
+				"chain"//click
+				{
+				"msdelay" "2075"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "1.5"
+					"y" "2"
+					"z" "0"
+				}
+				"chain"//slide
+				{
+				"msdelay" "2400"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "-2.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "2465"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "2"
+					"z" "-4"
+				}
+				"chain"//handforward
+				{
+				"msdelay" "2650"
+				"msRamp" "120"
+				"msSustain" "10"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "0.5"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+			"5001" //pistol muzzle
+			{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "11"
+				}
+			
+
+			}
+			}
+		}
+		"weapon_deagle"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+
+				"isEffect"	"1"
+					
+				"group" "movement"
+				"msRamp" "200"
+				"msSustain" "40"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "0.75"
+					"z" "0.75"
+				}
+				"chain"//handforward
+				{
+				"msdelay" "500"
+				"msRamp" "120"
+				"msSustain" "40"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "-0.5"
+					"z" "-0.75"
+				}
+				}
+				}
+
+				"ACT_VM_RELOAD"//reload one pistol
+				{
+				"isEffect"      "1"
+				"group" "movement"
+
+				"msdelay" "75"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "110"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "3"
+				}
+				"chain"//release old clip
+				{
+				"msdelay" "400"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1.25"
+					"z" "0"
+				}
+				"chain"//clip inserted
+				{
+				"msdelay" "1100"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//hand hitting gun
+				{
+				"msdelay" "1400"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+
+					"x" "1"
+					"y" "1.5"
+					"z" "0"
+				}
+				"chain"//clip clicked in
+				{
+				"msdelay" "1400"
+				"msRamp" "20"
+				"msSustain" "0"
+				"msDecay" "10"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+
+					"x" "1"
+					"y" "2"
+					"z" "0"
+				}
+				"chain"//slide
+				{
+				"msdelay" "1550"
+				"msRamp" "6"
+				"msSustain" "25"
+				"msDecay" "4"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-1"
+				}
+				"chain"//handforward
+				{
+				"msdelay" "1700"
+				"msRamp" "120"
+				"msSustain" "10"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "0.5"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			
+			}
+			"AnimationEvents"
+			{
+			"5001" //pistol muzzle
+			{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "10"
+				"msDecay" "35"
+				"special" "NOISEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "9.5"
+				}
+			
+
+			}
+			}
+		}
+		"weapon_glock"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+					
+				"group" "movement"
+				"msRamp" "200"
+				"msSustain" "60"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "1"
+				}
+				"chain"//pull slide with hand
+				{
+				"msdelay" "350"
+				"msRamp" "50"
+				"msSustain" "30"
+				"msDecay" "15"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.45"
+					"y" "0"
+					"z" "0.75"
+				}
+				"chain"//slide
+				{
+				"msdelay" "400"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "435"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "3"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "560"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "0"
+					"z" "-1.25"
+				}
+				"chain"//click
+				{
+				"msdelay" "595"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "0"
+					"z" "-2"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_RELOAD"//reload one pistol
+				{
+
+				"isEffect"	"1"
+				"group" "movement"
+
+				"msdelay" "75"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "110"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "3"
+				}
+				"chain"//clip released
+				{
+				"msdelay" "425"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1.35"
+					"z" "0"
+				}
+				"chain"//clip lifted
+				{
+				"msdelay" "900"
+				"msRamp" "220"
+				"msSustain" "40"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//clip inserted
+				{
+				"msdelay" "1100"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//hand hitting gun
+				{
+				"msdelay" "1500"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+
+					"x" "1"
+					"y" "1.5"
+					"z" "0"
+				}
+				"chain"//clip clicked in
+				{
+				"msdelay" "1500"
+				"msRamp" "20"
+				"msSustain" "0"
+				"msDecay" "10"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+
+					"x" "1"
+					"y" "1.5"
+					"z" "0"
+				}
+				"chain"//click
+				{
+				"msdelay" "1545"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "2"
+					"y" "3"
+					"z" "0"
+				}
+				"chain"//slide
+				{
+				"msdelay" "1900"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-1.5"
+				}
+				"chain"//handforward
+				{
+				"msdelay" "1900"
+				"msRamp" "220"
+				"msSustain" "40"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "-0.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "1945"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-4.5"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+
+			"AnimationEvents"
+			{
+			"5001" //pistol muzzle
+			{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "11"
+				}
+			
+
+			}
+			}
+		}
+
+		"weapon_tmp"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+					
+				"group" "movement"
+				"msRamp" "200"
+				"msSustain" "60"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "2"
+				}	
+				"chain"//handforward
+				{
+				"msdelay" "500"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//handright
+				{
+				"msdelay" "600"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-1"
+					"y" "0.5"
+					"z" "0"
+				}
+				}
+				}
+				}
+				"ACT_VM_RELOAD" //reload right noise
+				{
+				"isEffect"	"1"
+				"group" "movement"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-1.75"
+					"y" "0"
+					"z" "0"
+				}
+				"chain"//pull out old clip
+				{
+				"msRamp" "80"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "600"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-2.15"
+					"z" "0"
+				}
+					
+				"chain" //insert new clip
+				{
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "1250"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.25"
+					"y" "1.25"
+					"z" "0"
+				}
+				"chain" //New Clip Clicking in Place
+				{
+				"msRamp" "7"
+				"msSustain" "15"
+				"msDecay" "7"
+				"msDelay" "1300"
+				"special" "NOISEENVELOPE2X"
+				"force"
+				{
+
+					"x" "0.25"
+					"y" "1.25"
+					"z" "0"
+				}
+				"chain" //Move gun back to idle position
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "1650"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "1"
+				}
+				"chain" //Move gun back to idle position (Left)
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "1800"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-1"
+					"y" "0"
+					"z" "0"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "1"
+				"msSustain" "16"
+				"msDecay" "1"
+			
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "9"
+				}
+				}
+
+			}
+		}
+		"weapon_mac10"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+					
+				"isEffect"	"1"
+				"group" "movement"
+				"msRamp" "220"
+				"msSustain" "100"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "1"
+				}	
+				"chain"//handforward
+				{
+				"msdelay" "300"
+				"msRamp" "220"
+				"msSustain" "100"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//handright
+				{
+				"msdelay" "400"
+				"msRamp" "220"
+				"msSustain" "80"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "0"
+				}
+				}
+				}
+				}
+				"ACT_VM_RELOAD" //reload right noise
+				{
+				"isEffect"	"1"
+				"group" "movement"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-1"
+					"y" "0"
+					"z" "0"
+				}
+				"chain" // Remove old clip
+				{
+				"msRamp" "40"
+				"msSustain" "25"
+				"msDecay" "10"
+				"msDelay" "700"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-1.5"
+					"y" "-0.75"
+					"z" "0"
+				}
+				"chain"//pull out old clip
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "800"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-0.5"
+					"z" "0"
+				}
+				"chain" //Move New Clip up
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "1250"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+
+					"x" "1"
+					"y" "0.5"
+					"z" "0"
+				}	
+				"chain" //Partially insert new clip
+				{
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "1450"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1.25"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain" //Partially insert new clip 2
+				{
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "1550"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.5"
+					"z" "0"
+				}
+				"chain" //Partially insert new clip 3
+				{
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "1650"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain" // Insert New clip
+				{
+				"msRamp" "40"
+				"msSustain" "20"
+				"msDecay" "10"
+				"msDelay" "1950"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1.5"
+					"y" "1"
+					"z" "0"
+				}
+				"chain" //New Clip clicking in place
+				{
+				"msRamp" "4"
+				"msSustain" "10"
+				"msDecay" "4"
+				"msDelay" "1950"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//slide
+				{
+				"msdelay" "2500"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain" //Move gun back to idle position
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "2700"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "0.5"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "1"
+				"msSustain" "16"
+				"msDecay" "1"
+			
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "9"
+				}
+				}
+
+			}
+		}
+		"weapon_ump45"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+					
+				"group" "movement"
+				"msRamp" "200"
+				"msSustain" "60"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "1"
+				}	
+				"chain"//handforward
+				{
+				"msdelay" "300"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//handright
+				{
+				"msdelay" "350"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "0"
+					"z" "0"
+				}
+				}
+				}
+				}
+				"ACT_VM_RELOAD" //reload right noise
+				{
+				"isEffect"	"1"
+				"group" "movement"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1.25"
+					"y" "0"
+					"z" "0"
+				}
+				"chain" // reload moving left	
+				{
+				"group" "movement"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "300"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-1.4"
+					"y" "0"
+					"z" "0"
+				}
+				"chain"//pull out old clip
+				{
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "600"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-2.25"
+					"z" "0"
+				}
+					
+				"chain" //Move new clip in position
+				{
+				"msRamp" "220"
+				"msSustain" "60"
+				"msDecay" "40"
+				"msDelay" "1400"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1.25"
+					"y" "1"
+					"z" "0"
+				}
+				"chain" //tap new clip in place
+				{
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "1700"
+				"special" "NOISEENVELOPE2X"
+				"force"
+				{
+
+					"x" "1.75"
+					"y" "1.75"
+					"z" "0"
+				}
+				"chain" //New Clip Clicking in Place
+				{
+				"msRamp" "4"
+				"msSustain" "10"
+				"msDecay" "4"
+				"msDelay" "1900"
+				"special" "NOISEENVELOPE2X"
+				"force"
+				{
+
+					"x" "0.75"
+					"y" "-0.75"
+					"z" "0"
+				}
+				"chain"//pull slide down with hand
+				{
+				"msdelay" "2500"
+				"msRamp" "60"
+				"msSustain" "40"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-2"
+					"z" "0.75"
+				}
+				"chain"//slide
+				{
+				"msdelay" "2600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-2.5"
+					"z" "0.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "2625"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-4.5"
+					"z" "2.75"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "2700"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.75"
+					"z" "-1"
+				}
+				"chain"//click
+				{
+				"msdelay" "2725"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "3.75"
+					"z" "-1.75"
+				}
+				"chain" //Move gun back to idle position
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "2950"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "0.5"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "1"
+				"msSustain" "16"
+				"msDecay" "1"
+			
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "9"
+				}
+				}
+
+			}
+		}
+		"weapon_p90"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+				
+				"chain"//pull slide with hand
+				{
+				"msdelay" "200"
+				"msRamp" "50"
+				"msSustain" "20"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "0.25"
+					"z" "1.5"
+				}
+				"chain"//slide
+				{
+				"msdelay" "300"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "0.25"
+					"z" "1.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "325"
+				"msRamp" "0"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "1.75"
+					"y" "1.75"
+					"z" "3"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "400"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-0.25"
+					"z" "-1"
+				}
+				"chain"//click
+				{
+				"msdelay" "425"
+				"msRamp" "0"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "-1.25"
+					"y" "-1"
+					"z" "-2"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_RELOAD" //reload right noise
+				{
+				"isEffect"	"1"
+				"group" "movement"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-1"
+					"y" "0"
+					"z" "0"
+				}
+				"chain"//release old clip 
+				{
+				"msRamp" "5"
+				"msSustain" "10"
+				"msDecay" "5"
+				"msDelay" "450"
+				"special" "NOISEENVELOPE"
+
+				"force"
+				{
+					"x" "1"
+					"y" "1"
+					"z" "1"
+				}
+				"chain"//Pull out old clip 
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "750"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "-1.25"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Pull out old clip 2
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "800"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-0.5"
+				}
+				"chain" // Move old clip down and away
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "900"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.75"
+					"z" "0"
+				}
+					
+				"chain" //Partially insert new clip
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "1450"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0.90"
+					"z" "0"
+				}
+				"chain" //tap new clip in place
+				{
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "1950"
+				"special" "NOISEENVELOPE2X"
+				"force"
+				{
+
+					"x" "0"
+					"y" "-0.75"
+					"z" "-1"
+				}
+				"chain"//clip in
+				{
+				"msdelay" "2150"
+				"msRamp" "10"
+				"msSustain" "10"
+				"msDecay" "10"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-2"
+					"z" "0"
+				}
+				"chain"//pull slide with hand
+				{
+				"msdelay" "2675"
+				"msRamp" "50"
+				"msSustain" "20"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0.25"
+					"z" "0.75"
+				}
+				"chain"//slide
+				{
+				"msdelay" "2700"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.25"
+					"y" "0.25"
+					"z" "0.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "2725"
+				"msRamp" "0"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0.5"
+					"z" "1"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "2850"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.20"
+					"z" "-0.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "2875"
+				"msRamp" "0"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.5"
+					"z" "-1.25"
+				}
+				"chain" //Move gun back to idle position
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "3000"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.75"
+					"z" "0.75"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "1"
+				"msSustain" "6"
+				"msDecay" "1"
+			
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "10"
+				}
+				}
+
+			}
+		}
+		"weapon_mp5navy"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+					
+				"isEffect"	"1"
+				"group" "movement"
+				"msRamp" "200"
+				"msSustain" "60"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "1"
+				}	
+				"chain"//handforward
+				{
+				"msdelay" "500"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//handright
+				{
+				"msdelay" "600"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//slide
+				{
+				"msdelay" "400"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "435"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "4.5"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "645"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0.45"
+					"y" "0"
+					"z" "-3"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_RELOAD" //reload right noise
+				{
+				"isEffect"	"1"
+				"group" "movement"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.75"
+					"z" "0"
+				}
+				"chain"//pull out old clip
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "450"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "-1.5"
+					"y" "-1.25"
+					"z" "0"
+				}
+				"chain"//pull out old clip (hand)
+				{
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "550"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.50"
+					"y" "-0.35"
+					"z" "0"
+				}
+				"chain" //Line up clip with gun
+				{
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "90"
+				"msDelay" "1300"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain" //Line up clip with gun 2
+				{
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "90"
+				"msDelay" "1400"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.75"
+					"z" "1"
+				}
+
+				"chain" //tap new clip in place
+				{
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "1650"
+				"special" "NOISEENVELOPE2X"
+				"force"
+				{
+
+					"x" "0.75"
+					"y" "1.5"
+					"z" "0"
+				}
+				"chain" //New Clip Clicking in Place
+				{
+				"msRamp" "8"
+				"msSustain" "10"
+				"msDecay" "8"
+				"msDelay" "1700"
+				"special" "NOISEENVELOPE2X"
+				"force"
+				{
+
+					"x" "0.75"
+					"y" "1.5"
+					"z" "0"
+				}
+				"chain"//slide
+				{
+				"msdelay" "2300"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "2335"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "4.5"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "2500"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "2535"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0.45"
+					"y" "0"
+					"z" "-3"
+				}
+				"chain" //Move gun back to idle position
+				{
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"msDelay" "2700"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.75"
+					"z" "0.75"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "1"
+				"msSustain" "8"
+				"msDecay" "1"
+			
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "9"
+				}
+				}
+
+			}
+		}
+
+		"weapon_m3"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+					
+				"isEffect"	"1"
+				"msRamp" "200"
+				"msSustain" "60"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "2"
+				}	
+				"chain"//handforward
+				{
+				"msdelay" "500"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//slide
+				{
+				"msdelay" "450"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "3.5"
+				}
+				"chain"//slide
+				{
+				"msdelay" "600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-3.25"
+				}
+				}
+				}
+				}
+				}
+				
+				"ACT_VM_RELOAD"//raise forward reload
+				{
+					
+				"isEffect"	"1"
+				"group" "movement"
+				"msRamp" "200"
+				"msSustain" "0"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0.5"
+					"y" "0.5"
+					"z" "-0.25"
+				}		
+				"chain"//Insert Shell
+				{
+				"msdelay" "70"
+				"msRamp" "200"
+				"msSustain" "0"
+				"msDecay" "20"
+				"special" "NOISEENVELOPE8X"
+				"force"
+				{
+					"x" "1.05"
+					"y" "0.55"
+					"z" "0"
+				}
+				}
+				}
+
+				"ACT_SHOTGUN_RELOAD_FINISH" //Pump backward
+				{
+				"isEffect"	"1"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"msDelay" "350"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-2.5"
+					"z" "0"
+				}
+				"chain"//Slide forward
+				{
+				"msdelay" "500"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "2"
+					"z" "-1.25"
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "12"
+				"msSustain" "15"
+				"msDecay" "12"
+				"special" "NOISEENVELOPE2X"
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "7.25"
+				}
+				"chain"//pump
+				{
+				"msDelay" "500"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain"//Slide forward
+				{
+				"msDelay" "650"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.75"
+					"z" "-2"
+				}
+				}
+				}
+				}
+			}
+		}
+
+		"weapon_xm1014"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+					
+				"group" "movement"
+				"msRamp" "200"
+				"msSustain" "60"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "1"
+				}	
+				"chain"//handforward
+				{
+				"msdelay" "500"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//grab
+				{
+				"msdelay" "480"
+				"msRamp" "60"
+				"msSustain" "10"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "0"
+				}
+				"chain"//grab
+				{
+				"msdelay" "650"
+				"msRamp" "120"
+				"msSustain" "10"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "-0.5"
+				}
+				}
+				}
+				}
+				}
+				"ACT_VM_RELOAD"//raise forward reload
+				{
+					
+				"isEffect"	"1"
+				"group" "movement"
+				"msRamp" "200"
+				"msSustain" "0"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0.5"
+					"y" "0"
+					"z" "-0.5"
+				}		
+				"chain"//Insert Shell
+				{
+				"msdelay" "70"
+				"msRamp" "200"
+				"msSustain" "0"
+				"msDecay" "20"
+				"special" "NOISEENVELOPE8X"
+				"force"
+				{
+					"x" "1.35"
+					"y" "0"
+					"z" "0"
+				}
+				"chain"//click
+				{
+				"msdelay" "120"
+				"msRamp" "1"
+				"msSustain" "2"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE8X"
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-0.125"
+				}
+				}
+				}
+				}
+
+				"ACT_SHOTGUN_RELOAD_START" //long reload start
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "0"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "-1"
+					"y" "-0.75"
+					"z" "0.75"
+				}
+				}
+				"ACT_SHOTGUN_RELOAD_FINISH" //long reload end
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "0"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "-1"
+					"y" "0"
+					"z" "-0.5"
+				}	
+				}
+
+			}
+			"AnimationEvents"
+			{
+				"5001" //pistol muzzle
+				{
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "17"
+				"msSustain" "25"
+				"msDecay" "17"
+				"special" "NOISEENVELOPE4X"
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "10.75"
+				}
+				}
+			}
+		}
+
+		"weapon_awp"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "200"
+				"msDecay" "60"
+				"msDelay" "100"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "0.75"
+					"z" "0.75"
+				}	
+				"chain"//move down
+				{
+				"group" "movement"
+				"msdelay" "550"
+				"msRamp" "200"
+				"msSustain" "300"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.25"
+					"z" "-0.50"
+				}
+				}
+				}
+
+				"ACT_VM_RELOAD"//reload
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "50"
+				"msSustain" "75"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0.75"
+					"y" "-0.5"
+					"z" "0"
+				}	
+				"chain"//Remove old clip
+				{
+				"msdelay" "750"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.5"
+					"z" "0"
+				}
+				"chain"//Move old clip down
+				{
+				"msdelay" "800"
+				"msRamp" "60"
+				"msSustain" "40"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.5"
+					"z" "0"
+				}
+				"chain"//Move new clip up
+				{
+				"msdelay" "1400"
+				"msRamp" "60"
+				"msSustain" "40"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1.25"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Insert New Clip
+				{
+				"msdelay" "1950"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.85"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//hand hitting gun
+				{
+				"msdelay" "1950"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+
+					"x" "1.25"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"// Clip clicking in
+				{
+				"msdelay" "1975"
+				"msRamp" "7"
+				"msSustain" "7"
+				"msDecay" "7"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "0.40"
+					"z" "0"
+				}
+				"chain"//pull bolt back with hand
+				{
+				"msDelay" "2800"
+				"msAttack" "220"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.75"
+					"z" "1.5"
+				}
+				"chain"//boltpull back
+				{
+			
+				"msdelay" "2900"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "2"
+				}
+				"chain"//click
+				{
+			
+				"msdelay" "2935"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "3"
+				}
+				"chain"//hand pulling bolt down
+				{
+
+				"msDelay" "3200"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.1"
+					"y" "-0.2"
+					"z" "-0.2"
+				}
+				"chain"//Boltpull in
+				{
+				"msdelay" "3300"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "-0.1"
+					"y" "-0.40"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "3350"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-1.25"
+					"z" "-2.5"
+				}
+				"chain"//lower weapon
+				{
+				"msdelay" "3375"
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.5"
+					"z" "0"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}	
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+				"isEffect"	"1"
+
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "5"
+				"msDecay" "18"
+				"force"
+				{
+					"x" "-1"
+					"y" "-0.25"
+					"z" "18"
+				}
+				"chain" // boltpull
+				{
+				
+				"group" "movement"
+
+				"msAttack" "220"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "40"
+				"msDelay" "500"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.75"
+					"z" "1.75"
+				}
+				"chain"//boltpull back
+				{
+			
+				"msdelay" "600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "2.5"
+				}
+				"chain"//click
+				{
+			
+				"msdelay" "635"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "4.5"
+				}
+				"chain"//hand pulling bolt down
+				{
+
+				"msDelay" "700"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.1"
+					"y" "-0.2"
+					"z" "-0.2"
+				}
+				"chain"//Boltpull in
+				{
+				"msdelay" "815"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "-0.1"
+					"y" "-0.40"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "850"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-1.5"
+					"z" "-3.5"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+				
+		}
+
+		"weapon_scout"
+		{
+			"Activities"
+			{
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "40"
+				"msDecay" "60"
+				"msDelay" "100"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "0.75"
+					"z" "0.75"
+				}	
+				"chain"//move down
+				{
+				"group" "movement"
+				"msdelay" "550"
+				"msRamp" "200"
+				"msSustain" "4"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.35"
+					"y" "-0.35"
+					"z" "-0.355"
+				}
+				}
+				}
+				"ACT_VM_RELOAD"//reload Remove clip
+				{
+				"isEffect"	"1"
+				"msdelay" "500"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "0"
+				}
+				"chain"//Move old clip down
+				{
+				"msdelay" "550"
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.75"
+					"z" "0"
+				}
+				"chain"//Move new clip up
+				{
+				"msdelay" "1060"
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.80"
+					"z" "0"
+				}
+				"chain"//Insert New Clip
+				{
+				"msdelay" "1300"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//hand hitting gun
+				{
+				"msdelay" "1425"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+
+					"x" "0"
+					"y" "1.25"
+					"z" "0"
+				}
+				"chain"// Clip clicking in
+				{
+				"msdelay" "1425"
+				"msRamp" "2"
+				"msSustain" "2"
+				"msDecay" "2"
+
+				"force"
+				{
+					"x" "0"
+					"y" "2.25"
+					"z" "0"
+				}
+				"chain"//hand pulling bolt back
+				{
+
+				"msDelay" "1800"
+				"msAttack" "220"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "1"
+				}
+				"chain"//boltpull back
+				{
+			
+				"msdelay" "1900"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain"//click
+				{
+			
+				"msdelay" "1925"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "4.5"
+				}
+				"chain"//hand pulling bolt down
+				{
+
+				"msDelay" "2100"
+				"msAttack" "220"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.2"
+					"y" "-0.2"
+					"z" "-0.5"
+				}
+				"chain"//Boltpull in
+				{
+				"msdelay" "2200"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.25"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "2250"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "-1.5"
+					"y" "-1.5"
+					"z" "-3.75"
+				}
+				"chain"//back to idle
+				{
+				"msdelay" "2650"
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.5"
+					"z" "0"
+				}
+				}
+				}
+				}	
+				}
+				}
+				}
+				}	
+				}	
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "5"
+				"msSustain" "11"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "12"
+				}
+				
+				"chain" // Boltpull on fire
+				{
+				"group" "movement"
+
+				"msDelay" "500"
+				"msAttack" "220"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "1"
+				}
+				"chain"//boltpull back
+				{
+			
+				"msdelay" "600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain"//click
+				{
+			
+				"msdelay" "625"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "4.5"
+				}
+				"chain"//hand pulling bolt down
+				{
+
+				"msDelay" "700"
+				"msAttack" "220"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.2"
+					"y" "-0.2"
+					"z" "-0.5"
+				}
+				"chain"//Boltpull in
+				{
+				"msdelay" "800"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.25"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "850"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "-2"
+					"y" "-2"
+					"z" "-4.75"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+			}
+		}
+		"weapon_g3sg1"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "220"
+				"msDelay" "150"
+				"msSustain" "100"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "1"
+					"y" "1"
+					"z" "0"
+				}	
+				}
+				"ACT_VM_RELOAD"//reload
+				{
+				"isEffect"	"1"
+					
+				"group" "movement"
+				"msRamp" "300"
+				"msSustain" "100"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "-1"
+					"y" "0"
+					"z" "0.8"
+				}
+				"chain"//twist slide 1
+				{
+				"msdelay" "600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1.75"
+					"z" "0"
+				}
+				"chain"//Lift up slide with hand
+				{
+				"msdelay" "600"
+				"msRamp" "40"
+				"msSustain" "20"
+				"msDecay" "10"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//twist slide 2
+				{
+				"msdelay" "700"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "1.75"
+				}
+				"chain"//remove clip
+				{
+				"msdelay" "1800"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-1"
+					"z" "0"
+				}
+				"chain"//Pull clip down
+				{
+				"msdelay" "2000"
+				"msRamp" "220"
+				"msSustain" "40"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "0"
+				}
+				"chain"//Move clip up 
+				{
+				"msdelay" "2500"
+				"msRamp" "220"
+				"msSustain" "40"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//Insert clip
+				{
+				"msdelay" "2800"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "2"
+					"z" "0"
+				}
+				"chain"//Clip Clicking in
+				{
+				"msdelay" "2825"
+				"msRamp" "7"
+				"msSustain" "10"
+				"msDecay" "7"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Push slide down 1
+				{
+				"msdelay" "3800"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1.25"
+					"z" "0"
+				}
+				"chain"//Push slide down with hand
+				{
+				"msdelay" "3800"
+				"msRamp" "40"
+				"msSustain" "20"
+				"msDecay" "10"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-0.5"
+					"z" "0"
+				}
+				"chain"//Push slide down 2
+				{
+				"msdelay" "3900"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-1.25"
+				}
+				}
+				}
+				}
+				}
+				}
+				}	
+				}
+				}	
+				}	
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "4"
+				"msSustain" "7"
+				"msDecay" "4"
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "12"
+				}
+				}
+			}
+		}
+		"weapon_sg550"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "200"
+				"msDecay" "60"
+				"msDelay" "100"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1.25"
+					"z" "0.75"
+				}	
+				"chain"//move down
+				{
+				"group" "movement"
+				"msdelay" "500"
+				"msRamp" "200"
+				"msSustain" "200"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.50"
+					"y" "-0.50"
+					"z" "-0.50"
+				}
+				}
+				}
+				"ACT_VM_RELOAD"//reload
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "500"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "1"
+				}	
+				"chain"//remove clip
+				{
+				"msdelay" "700"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "-1"
+					"y" "-1"
+					"z" "0"
+				}
+				"chain"//Partially Insert Clip
+				{
+				"msdelay" "1800"
+				"msRamp" "80"
+				"msSustain" "100"
+				"msDecay" "70"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1.25"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"//Insert Clip
+				{
+				"msdelay" "2100"
+				"msRamp" "80"
+				"msSustain" "100"
+				"msDecay" "20"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1.25"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Hand against Clip
+				{
+				"msdelay" "2100"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1.25"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//clip clicking in
+				{
+				"msdelay" "2125"
+				"msRamp" "7"
+				"msSustain" "10"
+				"msDecay" "7"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1.5"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//hand pulling slide
+				{
+				"msdelay" "2900"
+				"msRamp" "60"
+				"msSustain" "40"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "2.25"
+				}
+				"chain"//slide
+				{
+				"msdelay" "3000"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "2"
+					"y" "0"
+					"z" "3.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "3025"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "3"
+					"y" "0"
+					"z" "5"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "3100"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-1.25"
+					"y" "0"
+					"z" "-2.25"
+				}
+				"chain"//click
+				{
+				"msdelay" "3125"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "-1"
+					"y" "0"
+					"z" "-1.75"
+				}
+				"chain"//lower weapon
+				{
+				"msdelay" "3300"
+				"msRamp" "100"
+				"msSustain" "100"
+				"msDecay" "40"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-1"
+					"z" "0"
+				}
+				}
+				}
+				}
+				}
+				}
+				}	
+				}
+				}
+				}
+				}
+				}
+				}
+
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "2"
+				"msSustain" "7"
+				"msDecay" "2"
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "13"
+				}
+				}
+			}
+		}
+		"weapon_famas"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "80"
+				"msSustain" "30"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "0.75"
+					"z" "0.8"
+				}	
+				"chain"//move down
+				{
+				"group" "movement"
+				"msdelay" "300"
+				"msRamp" "80"
+				"msSustain" "30"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.75"
+					"z" "-0.8"
+				}
+				}
+				}
+				"ACT_VM_RELOAD"//reload
+				{
+				"isEffect"	"1"
+				
+				"msdelay" "500"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-1.40"
+					"z" "0"
+				}
+				"chain"//Move New Clip in Place
+				{
+				"msdelay" "1050"
+				"msRamp" "220"
+				"msSustain" "20"
+				"msDecay" "40"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Insert New Clip
+				{
+				"msdelay" "1450"
+				"msRamp" "80"
+				"msSustain" "40"
+				"msDecay" "20"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "1.25"
+					"z" "0"
+				}
+				"chain"//New Clip Clicking in
+				{
+				"msdelay" "1500"
+				"msRamp" "10"
+				"msSustain" "10"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "1.5"
+					"z" "0"
+				}
+				"chain"//pull slide with fingers
+				{
+				"msdelay" "2275"
+				"msRamp" "30"
+				"msSustain" "30"
+				"msDecay" "8"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "0"
+					"z" "0.75"
+				}
+				"chain"//slide
+				{
+				"msdelay" "2300"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "2345"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "2"
+					"y" "0"
+					"z" "6"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "2700"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "0"
+					"z" "-1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "2745"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "-1.5"
+					"y" "0"
+					"z" "-4"
+				}
+				"chain"//lower weapon
+				{
+				"msdelay" "2850"
+				"msRamp" "100"
+				"msSustain" "100"
+				"msDecay" "40"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-0.5"
+					"z" "0"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+				"isEffect"	"1"
+
+				"group" "recoil"
+				"msRamp" "1"
+				"msSustain" "8"
+				"msDecay" "3"
+				"force"
+				{
+					"x" "0"
+					"y" "0.1"
+					"z" "11"
+				}
+				}
+			}
+		}
+		"weapon_sg552"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "200"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "1"
+				}	
+				}
+				"ACT_VM_RELOAD"//reload
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "500"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "1"
+				}	
+				"chain"//Remove clip
+				{
+				"msdelay" "500"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-1.5"
+					"z" "0"
+				}
+				"chain"//Raise Clip
+				{
+				"msdelay" "950"
+				"msRamp" "220"
+				"msSustain" "100"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//Insert New Clip
+				{
+				"msdelay" "1350"
+				"msRamp" "80"
+				"msSustain" "20"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "1.25"
+					"z" "0"
+				}
+				"chain"//Clip Clicking In
+				{
+				"msdelay" "1400"
+				"msRamp" "6"
+				"msSustain" "10"
+				"msDecay" "6"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"//slide
+				{
+				"msdelay" "2000"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain"//slide
+				{
+				"msdelay" "2100"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-2"
+					"z" "0"
+				}
+				"chain"//lower weapon
+				{
+				"msdelay" "2350"
+				"msRamp" "100"
+				"msSustain" "100"
+				"msDecay" "40"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.75"
+					"z" "0"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "10"
+				"msDecay" "3"
+				"force"
+				{
+					"x" "0"
+					"y" "0.1"
+					"z" "10"
+				}
+				}
+			}
+		}
+		"weapon_aug"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "200"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1.25"
+					"z" "1.25"
+				}	
+				"chain"//twist handle out
+				{
+				"msdelay" "400"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-2.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "445"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-4.5"
+				}
+				"chain"//twist handle in
+				{
+				"msdelay" "600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "645"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "5"
+				}
+				"chain"//pull handle in
+				{
+				"msdelay" "700"
+				"msRamp" "80"
+				"msSustain" "30"
+				"msDecay" "50"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				
+
+				"ACT_VM_RELOAD"//reload
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "500"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "1"
+				}	
+				"chain"//pull slide backwards
+				{
+				"msdelay" "375"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "2"
+				}
+				"chain"//click
+				{
+				"msdelay" "400"
+				"msRamp" "1"
+				"msSustain" "2"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "2.25"
+					"y" "0"
+					"z" "3.75"
+				}
+				"chain"//pull slide updwards
+				{
+				"msdelay" "510"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1.40"
+					"z" "0"
+				}
+				"chain"//click
+				{
+				"msdelay" "545"
+				"msRamp" "1"
+				"msSustain" "2"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "3.5"
+					"z" "0"
+				}
+				"chain"//Remove Clip
+				{
+				"msdelay" "1350"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-1.5"
+					"z" "0"
+				}
+				"chain"//insert clip
+				{
+				"msdelay" "2500"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "1.25"
+					"z" "0"
+				}
+				"chain"//Hand against Clip
+				{
+				"msdelay" "2500"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//clip clicking in
+				{
+				"msdelay" "2525"
+				"msRamp" "7"
+				"msSustain" "10"
+				"msDecay" "7"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"//hand hitting slide
+				{
+				"msdelay" "3100"
+				"msRamp" "90"
+				"msSustain" "90"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.40"
+					"z" "-0.30"
+				}
+				"chain"//slide
+				{
+				"msdelay" "3100"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "-0.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "3145"
+				"msRamp" "1"
+				"msSustain" "2"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-3.75"
+					"z" "-0.75"
+				}
+				"chain"//slide
+				{
+				"msdelay" "3150"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-1.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "3200"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-3"
+				}
+				"chain"//lower weapon
+				{
+				"msdelay" "3500"
+				"msRamp" "100"
+				"msSustain" "100"
+				"msDecay" "40"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-0.5"
+					"z" "0"
+				}
+				}
+				}
+				}
+				}
+				}
+				}	
+				}
+				}
+				}
+				}
+				}
+				}	
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "10"
+				"msDecay" "5"
+				"force"
+				{
+					"x" "0"
+					"y" "0.1"
+					"z" "10"
+				}
+				}
+			}
+		}
+		"weapon_galil"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "200"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1.5"
+					"z" "1"
+				}	
+				}
+				"ACT_VM_RELOAD"//reload
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "500"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "1"
+				}	
+				"chain"//release clip
+				{
+				"msdelay" "300"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-1.5"
+					"z" "0"
+				}
+				"chain"//hand in1
+				{
+				"msdelay" "1275"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "1.25"
+					"z" "0"
+				}
+				"chain"//clip clicking in
+				{
+				"msdelay" "1275"
+				"msRamp" "7"
+				"msSustain" "10"
+				"msDecay" "7"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//slide
+				{
+				"msdelay" "2200"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "2225"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "5.5"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "2450"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-2.5"
+				}
+				"chain"//click
+				{
+				"msdelay" "2475"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-4"
+				}
+
+				"chain"//lower weapon
+				{
+				"msdelay" "2700"
+				"msRamp" "100"
+				"msSustain" "100"
+				"msDecay" "40"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.75"
+					"z" "0"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+				"isEffect"	"1"
+
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "10"
+				"msDecay" "20"
+				"force"
+				{
+					"x" "0"
+					"y" "0.1"
+					"z" "9"
+				}
+				}
+			}
+		}
+		"weapon_m4a1"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"IsEffect" "1"
+
+				"msdelay" "400"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "80"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.25"
+					"z" "0.5"
+				}	
+				"chain"//slide
+				{
+				"msdelay" "450"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.75"
+					"z" "1"
+				}
+				"chain"//click
+				{
+				"msdelay" "485"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.25"
+					"z" "0.5"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "-1"
+				}
+				"chain"//click
+				{
+				"msdelay" "635"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.25"
+					"z" "-0.25"
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_DRAW_SILENCED"//draw silenced
+				{
+				"IsEffect" "1"
+
+				"msdelay" "400"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "80"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.25"
+					"z" "0.5"
+				}	
+				"chain"//slide
+				{
+				"msdelay" "450"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.75"
+					"z" "1"
+				}
+				"chain"//click
+				{
+				"msdelay" "485"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.25"
+					"z" "0.5"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "-1"
+				}
+				"chain"//click
+				{
+				"msdelay" "635"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.25"
+					"z" "-0.25"
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_ATTACH_SILENCER"//Attach silencer hand movement
+				{
+				"isEffect" "1"
+				"group" "movement"
+					
+				"msDelay" "700"
+				"msRamp" "100"
+				"msSustain" "100"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "-3.5"
+				}	
+				"chain"//attach silencer
+				{
+				"msdelay" "950"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "0"
+				}
+				"chain"//click
+				{
+				"msdelay" "950"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.25"
+					"y" "0"
+					"z" "0"
+				}
+				"chain"//twist silencer upwards
+				{
+				"msdelay" "1100"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "-2"
+				}
+				"chain"//silencer twisting on gun
+				{
+				"msdelay" "1200"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1"
+					"z" "-1"
+				}
+				"chain"//click
+				{
+				"msdelay" "1200"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.25"
+					"z" "-0.25"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_DETACH_SILENCER"//Remove silencer
+				{
+				"isEffect" "1"
+				"group" "movement"
+
+				"msdelay" "650"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "1"
+				}
+				"chain"//twist silencer backwards
+				{
+				"msdelay" "700"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "20"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.65"
+					"z" "1.25"
+				}
+				"chain"//click
+				{
+				"msdelay" "775"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.25"
+					"z" "0.25"
+				}
+				"chain"//remove silencer
+				{
+				"msdelay" "950"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-1"
+					"y" "0"
+					"z" "0"
+				}
+				"chain"//Pull silencer back
+				{
+				"msDelay" "1100"
+				"msRamp" "100"
+				"msSustain" "100"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "0"
+					"z" "2.75"
+				}	
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_RELOAD"//reload
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "500"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "1"
+				}	
+				"chain"//remove clip
+				{
+				"msdelay" "650"
+				"msRamp" "60"
+				"msSustain" "30"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-1.25"
+					"y" "-0.75"
+					"z" "0"
+				}
+				"chain"//Partially Insert Clip
+				{
+				"msdelay" "1400"
+				"msRamp" "80"
+				"msSustain" "100"
+				"msDecay" "70"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1.25"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"//Insert Clip
+				{
+				"msdelay" "1750"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "1.25"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//Hand against Clip
+				{
+				"msdelay" "1750"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"//clip clicking in
+				{
+				"msdelay" "1775"
+				"msRamp" "7"
+				"msSustain" "10"
+				"msDecay" "7"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"//pull slide
+				{
+				"msdelay" "2450"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "80"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.25"
+					"z" "0.5"
+				}	
+				"chain"//slide
+				{
+				"msdelay" "2465"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.75"
+					"z" "1"
+				}
+				"chain"//click
+				{
+				"msdelay" "2485"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.25"
+					"z" "0.5"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "2600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "-1"
+				}
+				"chain"//click
+				{
+				"msdelay" "2635"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.25"
+					"z" "-0.25"
+				}
+				"chain"//lower weapon
+				{
+				"msdelay" "2650"
+				"msRamp" "100"
+				"msSustain" "100"
+				"msDecay" "40"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.75"
+					"z" "0"
+				}
+				}
+				}
+				}
+				}
+				}
+				}	
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_RELOAD_SILENCED"//reload (silenced)
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "500"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "1"
+				}	
+				"chain"//remove clip
+				{
+				"msdelay" "650"
+				"msRamp" "60"
+				"msSustain" "30"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-1.25"
+					"y" "-0.75"
+					"z" "0"
+				}
+				"chain"//Partially Insert Clip
+				{
+				"msdelay" "1400"
+				"msRamp" "80"
+				"msSustain" "100"
+				"msDecay" "70"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1.25"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"//Insert Clip
+				{
+				"msdelay" "1750"
+				"msRamp" "60"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "1.25"
+					"y" "0.5"
+					"z" "0"
+				}
+				"chain"//Hand against Clip
+				{
+				"msdelay" "1750"
+				"msRamp" "120"
+				"msSustain" "20"
+				"msDecay" "30"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"//clip clicking in
+				{
+				"msdelay" "1775"
+				"msRamp" "7"
+				"msSustain" "10"
+				"msDecay" "7"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"//pull slide
+				{
+				"msdelay" "2450"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "80"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.25"
+					"z" "0.5"
+				}	
+				"chain"//slide
+				{
+				"msdelay" "2465"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.75"
+					"z" "1"
+				}
+				"chain"//click
+				{
+				"msdelay" "2485"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.25"
+					"y" "-0.25"
+					"z" "0.5"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "2600"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "-1"
+				}
+				"chain"//click
+				{
+				"msdelay" "2635"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.25"
+					"z" "-0.25"
+				}
+				"chain"//lower weapon
+				{
+				"msdelay" "2650"
+				"msRamp" "100"
+				"msSustain" "100"
+				"msDecay" "40"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "-0.75"
+					"z" "0"
+				}
+				}
+				}
+				}
+				}
+				}
+				}	
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+				"isEffect"	"1"
+
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "10"
+				"msDecay" "10"
+				"force"
+				{
+					"x" "0"
+					"y" "0.1"
+					"z" "10"
+				}
+				}
+			}
+		}
+		"weapon_ak47"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+					
+				"group" "movement"
+				"msRamp" "200"
+				"msSustain" "60"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "1"
+				}
+				"chain"//pull slide with hand
+				{
+				"msdelay" "300"
+				"msRamp" "60"
+				"msSustain" "60"
+				"msDecay" "25"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0.75"
+					"z" "1"
+				}
+				"chain"//slide
+				{
+				"msdelay" "400"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "1.75"
+				}
+				"chain"//click
+				{
+				"msdelay" "435"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "1"
+					"y" "0"
+					"z" "3"
+				}
+				"chain"//slide back
+				{
+				"msdelay" "560"
+				"msRamp" "30"
+				"msSustain" "10"
+				"msDecay" "0"
+				"special" "NOISEENVELOPE4X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "0"
+					"z" "-1.25"
+				}
+				"chain"//click
+				{
+				"msdelay" "595"
+				"msRamp" "1"
+				"msSustain" "1"
+				"msDecay" "1"
+
+				"force"
+				{
+					"x" "-0.75"
+					"y" "0"
+					"z" "-2"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+
+				"ACT_VM_RELOAD"//reload
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "500"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "1"
+				}	
+				"chain"//release clip
+				{
+				"msdelay" "500"
+				"msRamp" "80"
+				"msSustain" "20"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-1"
+					"z" "0"
+				}
+				"chain"//Move Clip up
+				{
+				"msdelay" "1225"
+				"msRamp" "220"
+				"msSustain" "100"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Insert clip
+				{
+				"msdelay" "1500"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"//Clip Clicking in
+				{
+				"msdelay" "1550"
+				"msRamp" "5"
+				"msSustain" "10"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.5"
+					"y" "0.75"
+					"z" "0"
+				}
+				"chain"//lower weapon
+				{
+				"msdelay" "1725"
+				"msRamp" "220"
+				"msSustain" "100"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "-0.5"
+					"y" "-0.5"
+					"z" "0"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+
+				"isEffect"	"1"
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "8"
+				"msDecay" "8"
+				"force"
+				{
+					"x" "0"
+					"y" "0.1"
+					"z" "10"
+				}
+				}
+			}
+		}
+
+		"weapon_m249"
+		{
+			"Activities"
+			{ 
+
+				"ACT_VM_DRAW"//draw
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "200"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "1"
+				}	
+				}
+
+				"ACT_VM_RELOAD"//reload
+				{
+				"isEffect"	"1"
+				"group" "movement"
+					
+				"msRamp" "200"
+				"msSustain" "500"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+				"force"
+				{
+					"x" "0"
+					"y" "-0.5"
+					"z" "1"
+				}	
+				"chain"//release clip
+				{
+				"msdelay" "625"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-1.5"
+					"z" "0"
+				}
+				"chain"//Compartment releasing from clamp
+				{
+				"msdelay" "1600"
+				"msRamp" "5"
+				"msSustain" "10"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1.5"
+					"z" "1"
+				}
+				"chain"//open compartment
+				{
+				"msdelay" "1650"
+				"msRamp" "220"
+				"msSustain" "40"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "1"
+				}
+				"chain"//Open compartment completely
+				{
+				"msdelay" "1700"
+				"msRamp" "20"
+				"msSustain" "10"
+				"msDecay" "20"
+				"special" "NOISEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "0.75"
+					"z" "1"
+				}
+				"chain"//Raise Clip
+				{
+				"msdelay" "2500"
+				"msRamp" "220"
+				"msSustain" "40"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Insert new clip
+				{
+				"msdelay" "2675"
+				"msRamp" "80"
+				"msSustain" "10"
+				"msDecay" "60"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//New Clip Clicks in
+				{
+				"msdelay" "2675"
+				"msRamp" "5"
+				"msSustain" "10"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Bullet being pulled up 1
+				{
+				"msdelay" "3300"
+				"msRamp" "5"
+				"msSustain" "5"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Bullet being pulled up 2
+				{
+				"msdelay" "3350"
+				"msRamp" "5"
+				"msSustain" "5"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Bullet being pulled up 3
+				{
+				"msdelay" "3400"
+				"msRamp" "5"
+				"msSustain" "5"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Bullet being pulled up 4
+				{
+				"msdelay" "3450"
+				"msRamp" "5"
+				"msSustain" "5"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Bullet being pulled up 5
+				{
+				"msdelay" "3500"
+				"msRamp" "5"
+				"msSustain" "5"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "1"
+					"z" "0"
+				}
+				"chain"//Closing compartment
+				{
+				"msdelay" "4300"
+				"msRamp" "220"
+				"msSustain" "40"
+				"msDecay" "60"
+				"special" "SPLINEENVELOPE"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.75"
+					"z" "0.75"
+				}
+				"chain"//Compartment clicking closed
+				{
+				"msdelay" "4550"
+				"msRamp" "5"
+				"msSustain" "10"
+				"msDecay" "5"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0"
+					"y" "-0.75"
+					"z" "0.5"
+				}
+				"chain"//lower weapon
+				{
+				"msdelay" "5000"
+				"msRamp" "100"
+				"msSustain" "100"
+				"msDecay" "40"
+				"special" "NOISEENVELOPE2X"
+
+				"force"
+				{
+					"x" "0.75"
+					"y" "1"
+					"z" "0"
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"5001" //Muzzle
+				{
+				"isEffect"	"1"
+
+				"group" "recoil"
+				"msRamp" "0"
+				"msSustain" "10"
+				"msDecay" "20"
+				"force"
+				{
+					"x" "0"
+					"y" "0.1"
+					"z" "12"
+				}
+				}
+			}
+		}
+
+		"weapon_knife"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+					"isEffect"	"1"
+					"group" "movement"
+						
+					"msRamp" "200"
+					"msSustain" "200"
+					"msDecay" "60"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "0.75"
+						"z" "0"
+					}
+					"chain"
+					{
+					"group" "movement"
+						
+					"msRamp" "200"
+					"msSustain" "40"
+					"msDecay" "60"
+					"msDelay" "200"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "-0.75"
+						"y" "0"
+						"z" "0"
+					}
+					"chain"
+					{
+					"group" "movement"
+						
+					"msRamp" "200"
+					"msSustain" "40"
+					"msDelay" "300"
+					"msDecay" "60"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0.75"
+						"y" "0"
+						"z" "0"
+					}	
+					}
+					}	
+				}
+				"ACT_VM_HITCENTER"//stab
+				{
+					"isEffect"	"1"
+					"group" "movement"
+					"msRamp" "150"
+					"msDecay" "30"
+					"special" "NOISEENVELOPE2X"
+				
+	
+					"force"
+					{
+						"x" "1.75"
+						"y" "0"
+						"z" "3.5"
+					}
+				}
+				"ACT_VM_MISSCENTER"//empty swish
+				{
+					"isEffect"	"1"
+					"group" "movement"
+					"msRamp" "150"
+					"msDecay" "30"
+				
+	
+					"force"
+					{
+						"x" "-1.75"
+						"y" "0"
+						"z" "-3.5"
+					}
+				}
+			}
+			"AnimationEvents"
+			{
+			}
+		}
+
+		"weapon_hegrenade"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+					"isEffect"	"1"
+					"group" "movement"
+						
+					"msRamp" "200"
+					"msSustain" "200"
+					"msDecay" "60"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "0.75"
+						"z" "0"
+					}	
+				}
+				"ACT_VM_PULLPIN"//pull back
+				{
+					"isEffect"	"1"
+					"group" "movement"
+					"msDelay" "600"
+					"msRamp" "150"
+					"msDecay" "30"
+					"msSustain" "200"
+					"special" "SPLINEENVELOPE"
+				
+	
+					"force"
+					{
+						"x" "0"
+						"y" "-0.75"
+						"z" "2"
+					}
+					"chain"// Pull out pin
+					{
+					"group" "movement"
+					"msDelay" "600"
+					"msRamp" "4"
+					"msDecay" "4"
+					"msSustain" "4"
+					"special" "NOISEENVELOPE2X"
+				
+	
+					"force"
+					{
+						"x" "-1.9"
+						"y" "0"
+						"z" "0"
+					}
+					}
+				}
+				"ACT_VM_THROW"//Throw
+				{
+					"isEffect"	"1"
+					"group" "movement"
+					"msDelay" "105"
+					"msRamp" "40"
+					"msSustain" "1"
+					"msDecay" "20"
+				
+	
+					"force"
+					{
+						"x" "0"
+						"y" "0.5"
+						"z" "-8"
+					}
+				}
+			}
+
+		}
+		"weapon_smokegrenade"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+					"isEffect"	"1"
+					"group" "movement"
+						
+					"msRamp" "200"
+					"msSustain" "200"
+					"msDecay" "60"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "0.75"
+						"z" "0"
+					}	
+				}
+				"ACT_VM_PULLPIN"//pull back
+				{
+					"isEffect"	"1"
+					"group" "movement"
+					"msDelay" "600"
+					"msRamp" "150"
+					"msDecay" "30"
+					"msSustain" "200"
+					"special" "SPLINEENVELOPE"
+				
+	
+					"force"
+					{
+						"x" "0"
+						"y" "-0.75"
+						"z" "1"
+					}
+					"chain"// Pull out pin
+					{
+					"group" "movement"
+					"msDelay" "600"
+					"msRamp" "4"
+					"msDecay" "4"
+					"msSustain" "4"
+					"special" "NOISEENVELOPE2X"
+				
+	
+					"force"
+					{
+						"x" "-1.9"
+						"y" "0"
+						"z" "0"
+					}
+					}
+				}
+				"ACT_VM_THROW"//Throw
+				{
+					"isEffect"	"1"
+					"group" "movement"
+					"msDelay" "105"
+					"msRamp" "40"
+					"msSustain" "1"
+					"msDecay" "20"
+				
+	
+					"force"
+					{
+						"x" "0"
+						"y" "0.5"
+						"z" "-6.5"
+					}
+				}
+			}
+		}
+		"weapon_flashbang"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+					"isEffect"	"1"
+					"group" "movement"
+						
+					"msRamp" "200"
+					"msSustain" "200"
+					"msDecay" "60"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "0.75"
+						"z" "0"
+					}	
+				}
+				"ACT_VM_PULLPIN"//pull back
+				{
+					"isEffect"	"1"
+					"group" "movement"
+					"msDelay" "600"
+					"msRamp" "150"
+					"msDecay" "30"
+					"msSustain" "200"
+					"special" "SPLINEENVELOPE"
+				
+	
+					"force"
+					{
+						"x" "0"
+						"y" "-0.75"
+						"z" "1"
+					}
+					"chain"// Pull out pin
+					{
+					"group" "movement"
+					"msDelay" "600"
+					"msRamp" "4"
+					"msDecay" "4"
+					"msSustain" "4"
+					"special" "NOISEENVELOPE2X"
+				
+	
+					"force"
+					{
+						"x" "-1.9"
+						"y" "0"
+						"z" "0"
+					}
+					}
+				}
+				"ACT_VM_THROW"//Throw
+				{
+					"isEffect"	"1"
+					"group" "movement"
+					"msDelay" "105"
+					"msRamp" "40"
+					"msSustain" "1"
+					"msDecay" "20"
+				
+	
+					"force"
+					{
+						"x" "0"
+						"y" "0.5"
+						"z" "-6.5"
+					}
+				}
+			}
+		}
+		"weapon_c4"
+		{
+			"Activities"
+			{ 
+				"ACT_VM_DRAW"//draw
+				{
+					"isEffect"	"1"
+					"group" "movement"
+						
+					"msRamp" "90"
+					"msSustain" "60"
+					"msDecay" "90"
+					"msDelay" "75"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "1"
+						"z" "0"
+					}
+				"chain" //lower
+				{	
+					"msRamp" "60"
+					"msSustain" "40"
+					"msDecay" "60"
+					"msDelay" "325"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "-0.85"
+						"z" "0"
+					}		
+				}
+				}
+				"ACT_VM_PRIMARYATTACK"//begin plant
+				{
+					"isEffect"	"1"
+					"group" "movement"
+						
+					"msRamp" "200"
+					"msSustain" "200"
+					"msDecay" "60"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "-1.50"
+						"z" "0"
+					}	
+				}
+				"ACT_VM_SECONDARYATTACK"//end plant
+				{
+					"isEffect"	"1"
+					"group" "movement"
+						
+					"msRamp" "150"
+					"msSustain" "200"
+					"msDecay" "70"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "-2.50"
+						"z" "-1"
+					}	
+				"chain"//plant bomb
+				{
+					"msDelay" "740"
+					"msRamp" "50"
+					"msSustain" "15"
+					"msDecay" "10"
+					"special" "SPLINEENVELOPE"
+					"force"
+					{
+						"x" "0"
+						"y" "-2.75"
+						"z" "0"
+					}	
+				"chain"//bomb hitting ground
+				{
+					"msDelay" "800"
+					"msRamp" "5"
+					"msSustain" "5"
+					"msDecay" "5"
+
+					"force"
+					{
+						"x" "0"
+						"y" "-1.5"
+						"z" "0"
+					}	
+				}
+				}
+				}
+			}
+			"AnimationEvents"
+			{
+				"7001" //button press
+				{
+				"isEffect"	"1"
+
+				"group" "recoil"
+				"msRamp" "5"
+				"msSustain" "10"
+				"msDecay" "5"
+				"force"
+				{
+					"x" "0"
+					"y" "0.1"
+					"z" "2"
+				}
+				}
+			}
+		}
+
+	}
+
+}

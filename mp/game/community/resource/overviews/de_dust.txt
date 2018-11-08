@@ -1,0 +1,12 @@
+// HLTV overview description file for de_dust.bsp
+
+"de_dust"
+{
+	"material"	"overviews/de_dust"	// texture file
+	"pos_x"		"-2474"	// upper left world coordinate
+	"pos_y"		"3857"
+	"scale"		"5.6" 
+	"rotate"	"1"
+	"zoom"		"1.3"
+}
+

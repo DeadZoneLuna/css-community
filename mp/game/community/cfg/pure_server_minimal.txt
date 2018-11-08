@@ -1,0 +1,54 @@
+whitelist
+{
+	// Server rules used for sv_pure.
+	//
+	// Do not modify this file.
+	//
+	// See pure_server_whitelist_example.txt for more details on when this file is used and what the rules mean.
+
+	//
+	// Enforce consistency for a few critical files
+	//
+
+	sprites/white.vmt		trusted_source
+	sprites/white.vtf		trusted_source
+	vgui/white.vmt		trusted_source
+	vgui/white.vtf		trusted_source
+	effects/flashbang.vmt		trusted_source
+	effects/flashbang_white.vmt		trusted_source
+	particle/particle_smokegrenade1.vmt		trusted_source
+	particle/particle_smokegrenade.vtf		trusted_source
+	sprites/scope_arc.vmt		trusted_source
+	sprites/scope_arc.vtf		trusted_source
+	scripts/dsp_presets.txt		trusted_source
+
+	scripts/weapon_xm1014.ctx		trusted_source
+	scripts/weapon_usp.ctx		trusted_source
+	scripts/weapon_ump45.ctx		trusted_source
+	scripts/weapon_tmp.ctx		trusted_source
+	scripts/weapon_smokegrenade.ctx		trusted_source
+	scripts/weapon_sg552.ctx		trusted_source
+	scripts/weapon_sg550.ctx		trusted_source
+	scripts/weapon_scout.ctx		trusted_source
+	scripts/weapon_p90.ctx		trusted_source
+	scripts/weapon_p228.ctx		trusted_source
+	scripts/weapon_mp5navy.ctx		trusted_source
+	scripts/weapon_mac10.ctx		trusted_source
+	scripts/weapon_m4a1.ctx		trusted_source
+	scripts/weapon_m3.ctx		trusted_source
+	scripts/weapon_m249.ctx		trusted_source
+	scripts/weapon_knife.ctx		trusted_source
+	scripts/weapon_hegrenade.ctx		trusted_source
+	scripts/weapon_glock.ctx		trusted_source
+	scripts/weapon_galil.ctx		trusted_source
+	scripts/weapon_g3sg1.ctx		trusted_source
+	scripts/weapon_flashbang.ctx		trusted_source
+	scripts/weapon_fiveseven.ctx		trusted_source
+	scripts/weapon_famas.ctx		trusted_source
+	scripts/weapon_elite.ctx		trusted_source
+	scripts/weapon_deagle.ctx		trusted_source
+	scripts/weapon_c4.ctx		trusted_source
+	scripts/weapon_awp.ctx		trusted_source
+	scripts/weapon_aug.ctx		trusted_source
+	scripts/weapon_ak47.ctx		trusted_source
+}

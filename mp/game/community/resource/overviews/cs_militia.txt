@@ -1,0 +1,10 @@
+// HLTV overview description file for de_nuke.bsp
+
+"cs_militia"
+{
+	"material"	"overviews/cs_militia"	// texture file
+	"pos_x"		"-1256"	// upper left world coordinate
+	"pos_y"		"2157"
+	"scale"		"5" 
+}
+

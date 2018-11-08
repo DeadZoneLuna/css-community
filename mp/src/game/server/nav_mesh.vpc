@@ -1,0 +1,44 @@
+//-----------------------------------------------------------------------------
+//	NAV_MESH.VPC
+//
+//	Project script for navigation mesh files (no NextBot files)
+//-----------------------------------------------------------------------------
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories	"$BASE;.\NavMesh"
+		$PreprocessorDefinitions		"$BASE;USE_NAV_MESH"
+	}
+}
+
+$Project
+{
+	$Folder	"Source Files"
+	{
+		$Folder	"Navigation Mesh"
+		{
+			$File	"NavMesh\nav.h"
+			$File	"NavMesh\nav_area.cpp"
+			$File	"NavMesh\nav_area.h"
+			$File	"NavMesh\nav_colors.cpp"
+			$File	"NavMesh\nav_colors.h"
+			$File	"NavMesh\nav_edit.cpp"
+			$File	"NavMesh\nav_entities.cpp"
+			$File	"NavMesh\nav_entities.h"
+			$File	"NavMesh\nav_file.cpp"
+			$File	"NavMesh\nav_generate.cpp"
+			$File	"NavMesh\nav_ladder.cpp"
+			$File	"NavMesh\nav_ladder.h"
+			$File	"NavMesh\nav_merge.cpp"
+			$File	"NavMesh\nav_mesh.cpp"
+			$File	"NavMesh\nav_mesh.h"
+			$File	"NavMesh\nav_mesh_factory.cpp"
+			$File	"NavMesh\nav_node.cpp"
+			$File	"NavMesh\nav_node.h"
+			$File	"NavMesh\nav_pathfind.h"
+			$File	"NavMesh\nav_simplify.cpp"
+		}
+	}
+}

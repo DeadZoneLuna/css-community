@@ -1,0 +1,19 @@
+game_sounds_manifest
+{
+	 "precache_file"  	"scripts/game_sounds_hostages.txt"
+	 "precache_file"  	"scripts/game_sounds_bots.txt"
+	 
+	 "preload_file"  	"scripts/game_sounds.txt"
+	 "preload_file"  	"scripts/game_sounds_physics.txt"	
+	 "preload_file"  	"scripts/game_sounds_radio.txt"
+	 "preload_file"  	"scripts/game_sounds_weapons.txt"
+	 "preload_file"		"scripts/game_sounds_ambient_generic.txt"
+	 "preload_file"		"scripts/game_sounds_world.txt"
+
+	 // Level sounds
+
+	 "preload_file"		"scripts/level_sounds_general.txt"
+}
+
+
+

@@ -1,0 +1,12 @@
+// HLTV overview description file for de_chateau.bsp
+
+"de_chateau"
+{
+	"material"	"overviews/de_chateau"	// texture file
+	"pos_x"		"-892"	// upper left world coordinate
+	"pos_y"		"2901"
+	"scale"		"4.3"
+	"rotate"	"1"
+	"zoom"		"1.2"
+}
+

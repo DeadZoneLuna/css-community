@@ -1,0 +1,61 @@
+// This list of "buy aliases" is used by the AutoBuy system.
+// The system begins with the first alias in the list, and attempts to purchase it.
+// If a primary weapon is successfully purchased, all later primary weapon aliases are skipped.
+// Similarly, secondary weapon buy alias are skipped once a seconary weapon has been purchased.
+//
+// You can customize this list to reflect your weapon and equipment preferences and priorities.
+// DON'T MODIFY THIS FILE DIRECTLY.  Instead, copy it to autobuy.txt and make your modifications there.
+//
+// The console command for autobuy is "autobuy"
+//
+// The available buy aliases and their names as shown on the buy menu are:
+// (Many weapons have more than one buy alias)
+//
+// galil	- IDF Defender
+// ak47		- CV-47
+// scout	- Schmidt Scout
+// sg552	- Krieg 552
+// awp		- Magnum Sniper Rifle
+// g3sg1	- D3/AU1
+// famas	- Clarion 5.56
+// m4a1		- Maverick M4A1 Carbine
+// aug		- Bullpup
+// sg550	- Krieg 550 Commando
+// glock	- 9x19mm Sidearm
+// usp		- KM .45 Tactical
+// p228		- 228 Compact
+// deagle	- Night Hawk .50C
+// elite	- .40 Dual Elites
+// fiveseven	- ES Five-Seven
+// m3		- Leone 12 Gauge Super
+// xm1014	- Leone YG1265 Auto Shotgun
+// mac10	- Ingram MAC-10
+// tmp		- Schmidt Machine Pistol
+// mp5navy	- KM Sub-Machine Gun
+// ump45	- KM UMP45
+// p90		- ES C90
+// m249		- M249
+// primammo	- Primary Ammo
+// secammo	- Secondary Ammo
+// vest		- Kevlar
+// vesthelm	- Kevlar+Helmet
+// flashbang	- Flashbang
+// hegrenade	- HE Grenade
+// smokegrenade	- Smoke Grenade
+// nvgs		- Nightvision
+// defuser	- Defusal Kit
+
+m4a1
+ak47
+famas
+galil
+p90
+mp5
+
+primammo
+secammo
+
+defuser
+
+vesthelm
+vest
