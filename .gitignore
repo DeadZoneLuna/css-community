@@ -74,6 +74,7 @@ mp/src/mathlib/mathlib\.vpc\.sentinel
 mp/game/bin/
 mp/game/*/cfg/server_blacklist.txt
 mp/game/*/cfg/settings.scr
+mp/game/*/custom/
 mp/game/*/download/
 mp/game/*/downloadlists/
 mp/game/*/sound/sound.cache
