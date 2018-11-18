@@ -74,6 +74,8 @@ mp/src/mathlib/mathlib\.vpc\.sentinel
 mp/game/bin/
 mp/game/*/cfg/server_blacklist.txt
 mp/game/*/cfg/settings.scr
+mp/game/*/cfg/BuyPresets_ter.vdf
+mp/game/*/cfg/BuyPresets_ct.vdf
 mp/game/*/custom/
 mp/game/*/download/
 mp/game/*/downloadlists/
@@ -82,6 +84,7 @@ mp/game/*/serverconfig.vdf
 mp/game/*/modelsounds.cache
 mp/game/*/stats.txt
 mp/game/*/voice_ban.dt
+mp/game/*/textwindow_temp.html
 mp/game/*/materials/vgui/logos/spray\.vmt
 mp/game/*/materials/vgui/logos/spray\.vtf
 mp/src/game/server/Debug_*/player\.obj\.enc

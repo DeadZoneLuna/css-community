@@ -29,6 +29,11 @@ $Project "game_shader_dx9"
 	"materialsystem\stdshaders\game_shader_dx9_community.vpc" [$COMMUNITY]
 }
 
+$Project "gameui2"
+{
+	"game\gameui2\gameui2_base.vpc"		[($WIN32||$POSIX) && $COMMUNITY]
+}
+
 $Project "glview"
 {
 	"utils\glview\glview.vpc" [$WIN32]
