@@ -1,4 +1,4 @@
-//===== Copyright © 1996-2005, Valve Corporation, All rights reserved. ======//
+//===== Copyright Â© 1996-2005, Valve Corporation, All rights reserved. ======//
 //
 // Purpose: 
 //
@@ -367,9 +367,11 @@ ClientModeCSNormal* GetClientModeCSNormal()
 	return static_cast< ClientModeCSNormal* >( GetClientModeNormal() );
 }
 
+extern ConVar v_viewmodel_fov;
+
 float ClientModeCSNormal::GetViewModelFOV( void )
 {
-	return 74.0f;
+	return v_viewmodel_fov.GetFloat();
 }
 
 int ClientModeCSNormal::GetDeathMessageStartHeight( void )
