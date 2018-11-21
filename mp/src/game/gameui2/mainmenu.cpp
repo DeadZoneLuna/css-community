@@ -33,11 +33,7 @@ int32 __cdecl ButtonsPositionTop(Button_MainMenu* const* s1, Button_MainMenu* co
 
 MainMenu::MainMenu(vgui::Panel* Parent) : BaseClass(nullptr, "MainMenu")
 {
-#ifdef MFS
-	vgui::HScheme Scheme = vgui::scheme()->LoadSchemeFromFile("resource/schememainmenu.res", "SchemeMainMenu");
-#else
 	vgui::HScheme Scheme = vgui::scheme()->LoadSchemeFromFile("resource2/schememainmenu.res", "SchemeMainMenu");
-#endif
 	SetScheme(Scheme);
 
 	SetProportional(false);
@@ -54,11 +50,7 @@ MainMenu::MainMenu(vgui::Panel* Parent) : BaseClass(nullptr, "MainMenu")
 	LogoLeftText = GetGameUI2().ConvertToLocalizedString("#GameUI2_LogoLeft");
 	LogoRightText = GetGameUI2().ConvertToLocalizedString("#GameUI2_LogoRight");
 
-#ifdef MFS
-	CreateMenu("resource/mainmenu.res");
-#else
 	CreateMenu("resource2/mainmenu.res");
-#endif
 }
 
 void MainMenu::CreateMenu(const char* MenuScript)
@@ -79,16 +71,6 @@ void MainMenu::CreateMenu(const char* MenuScript)
 			{
 				ButtonsInGame.AddToTail(Button);
 			}
-#ifdef MFS
-			else if (Q_stristr(Specifics, "ingamesp"))
-			{
-				ButtonsInGameSP.AddToTail(Button);
-			}
-			else if (Q_stristr(Specifics, "ingamemp"))
-			{
-				ButtonsInGameMP.AddToTail(Button);
-			}
-#endif
 			else if (Q_stristr(Specifics, "mainmenu"))
 			{
 				ButtonsBackground.AddToTail(Button);
@@ -209,10 +191,6 @@ void MainMenu::Paint()
 {
 	BaseClass::Paint();
 
-	// TODO: Add script settings
-	vgui::surface()->DrawSetColor(Color(0, 0, 0, 255));
-	vgui::surface()->DrawFilledRectFade(0, 0, GetWide(), GetTall(), 255, 0, true);
-
 	DrawMainMenu();
 	DrawLogo();
 }
@@ -238,7 +216,7 @@ void MainMenu::OnSetFocus()
 	UpdateMenu();
 	
 	bIsVisible = true;
-	vgui::surface()->PlaySound("interface/ui/menu_open.wav");
+	//vgui::surface()->PlaySound("interface/ui/menu_open.wav");
 }
 
 void MainMenu::OnKillFocus()
@@ -246,7 +224,7 @@ void MainMenu::OnKillFocus()
 	BaseClass::OnKillFocus();
 
 	bIsVisible = false;
-	vgui::surface()->PlaySound("interface/ui/menu_close.wav");
+	//vgui::surface()->PlaySound("interface/ui/menu_close.wav");
 }
 
 void MainMenu::UpdateMenu()
@@ -254,14 +232,6 @@ void MainMenu::UpdateMenu()
 	for (int8 i = 0; i < ButtonsInGame.Count(); i++)
 		ButtonsInGame[i]->SetVisible(GetGameUI2().IsInLevel());
 
-#ifdef MFS
-	for (int8 i = 0; i < ButtonsInGameSP.Count(); i++)
-		ButtonsInGameSP[i]->SetVisible(!GetGameUI2().IsInMultiplayer());
-
-	for (int8 i = 0; i < ButtonsInGameMP.Count(); i++)
-		ButtonsInGameMP[i]->SetVisible(GetGameUI2().IsInMultiplayer());
-#endif
-	
 	for (int8 i = 0; i < ButtonsBackground.Count(); i++)
 		ButtonsBackground[i]->SetVisible(GetGameUI2().IsInBackgroundLevel());
 
@@ -273,27 +243,8 @@ void MainMenu::UpdateMenu()
 	if (GetGameUI2().IsInLevel() == true)
 	{
 		if (ButtonsInGame.IsEmpty() == false)
-		{
 			UpdatedActiveButtons.AddVectorToTail(ButtonsInGame);
-		}
 	}
-
-#ifdef MFS
-	if (GetGameUI2().IsInMultiplayer() == true)
-	{
-		if (ButtonsInGameMP.IsEmpty() == false)
-		{
-			UpdatedActiveButtons.AddVectorToTail(ButtonsInGameMP);
-		}
-	}
-	else
-	{
-		if (ButtonsInGameSP.IsEmpty() == false)
-		{
-			UpdatedActiveButtons.AddVectorToTail(ButtonsInGameSP);
-		}
-	}
-#endif
 	
 	if (GetGameUI2().IsInBackgroundLevel() == true)
 	{

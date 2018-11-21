@@ -35,10 +35,6 @@ public:
 private:
 	CUtlVector<Button_MainMenu*> ActiveButtons;
 	CUtlVector<Button_MainMenu*> ButtonsInGame;
-#ifdef MFS
-	CUtlVector<Button_MainMenu*> ButtonsInGameSP;
-	CUtlVector<Button_MainMenu*> ButtonsInGameMP;
-#endif
 	CUtlVector<Button_MainMenu*> ButtonsBackground;
 	CUtlVector<Button_MainMenu*> ButtonsShared;
 

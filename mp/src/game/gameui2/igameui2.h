@@ -18,7 +18,6 @@ work.  If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
 #include "vgui/VGUI.h"
 #include "mathlib/vector.h"
 #include "ivrenderview.h"
-#include "../game/shared/secobmod/secobmod_shareddefs.h" //MFS
 
 abstract_class IGameUI2 : public IBaseInterface
 {

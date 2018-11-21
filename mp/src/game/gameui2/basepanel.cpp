@@ -11,7 +11,7 @@ work.  If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
 #include "basepanel.h"
 
 #include "vgui/IVGui.h"
-// MFS #include "vgui/ISurface.h"
+#include "vgui/ISurface.h"
 #include "vgui/ILocalize.h"
 
 #include "tier0/icommandline.h"
@@ -38,14 +38,10 @@ BasePanel::BasePanel(vgui::VPANEL Parent) : BaseClass(nullptr)
 	SetVisible(false);
 	SetPostChildPaintEnabled(true);
 	
-	BackgroundMusic = "Interface.Music";
+	BackgroundMusic = "MenuMusic.Intro";
 	BackgroundMusicGUID = 0;
 
-#ifdef MFS
-	g_pVGuiLocalize->AddFile("resource/localization/gameui2_%language%.txt");
-#else
 	g_pVGuiLocalize->AddFile("resource2/localization/gameui2_%language%.txt");
-#endif
 
 	MainMenuPanel = new MainMenu(nullptr);
 	MainMenuHelperPanel = new MainMenuHelper(MainMenuPanel, nullptr);

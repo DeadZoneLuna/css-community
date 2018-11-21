@@ -236,11 +236,7 @@ CON_COMMAND(gameui2, "List of arguments: version, help")
 		else if (Q_stristr(args.Arg(1), "help"))
 		{
 			Msg("\nVisit ");
-			#ifdef MFS
-			ConColorMsg(Color(0, 148, 255, 255), "https://facebook.com/groups/mobileforcesandmfs");
-			#else
 			ConColorMsg(Color(0, 148, 255, 255), "https://github.com/SourceEnginePlayground/Hyperborea");
-			#endif
 			Msg(" to get the latest version or report an issue\n");
 		}
 	}

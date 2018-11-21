@@ -9,22 +9,15 @@ work.  If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
 */
 #pragma once
 
-#define fuck2
-
 #include "vgui2d/frame2d.h"
 #include "vgui_controls/AnimationController.h"
-#if defined MFS && defined fuck || defined fuck2
-#include "vgui_controls/PropertyDialog.h"
-#endif
+
 #include "button_panel.h"
 
-#ifdef fuck
-class Panel_Options : public Frame2D, public vgui::PropertyDialog
-#else
 class Panel_Options : public Frame2D
-#endif
 {
 	DECLARE_CLASS_SIMPLE(Panel_Options, Frame2D);
+
 public:
 	Panel_Options(vgui::VPANEL Parent, const char* PanelName);
 
@@ -39,10 +32,6 @@ public:
 	virtual void DrawTabs();
 	virtual void DrawBasicButtons();
 	virtual void OnCommand(char const* Command);
-
-#ifdef MFS
-	void OpenGammaDialog();
-#endif
 
 private:
 	vgui::AnimationController* AnimationController;
@@ -74,16 +63,4 @@ private:
 	float TitleOffsetY;
 
 	vgui::HFont TitleFont;
-
-#ifdef MFS
-#if !defined fuck && defined fuck2
-	vgui::PropertyDialog *m_PDialog;
-#endif
-#if 0
-	class COptionsSubKeyboard *m_pOptionsSubKeyboard;
-	class COptionsSubMouse *m_pOptionsSubMouse;
-	class COptionsSubAudio *m_pOptionsSubAudio;
-#endif
-	//class COptionsSubVideo *m_pOptionsSubVideo;
-#endif
 };

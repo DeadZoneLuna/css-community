@@ -40,11 +40,7 @@ void Button_MainMenu::Initialize()
 {
 	BaseClass::Initialize();
 	
-#ifdef MFS
-	vgui::HScheme Scheme = vgui::scheme()->LoadSchemeFromFile("resource/schememainmenu.res", "SchemeMainMenu");
-#else
 	vgui::HScheme Scheme = vgui::scheme()->LoadSchemeFromFile("resource2/schememainmenu.res", "SchemeMainMenu");
-#endif
 	SetScheme(Scheme);
 
 	SetProportional(false);

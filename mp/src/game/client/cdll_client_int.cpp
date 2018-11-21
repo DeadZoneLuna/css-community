@@ -1166,7 +1166,7 @@ void CHLClient::PostInit()
 #endif
 
 #if defined(GAMEUI2)
-	if (CommandLine()->FindParm("-nogameui2") == 0)
+	if ( CommandLine()->FindParm("-nogameui2") == 0 || CommandLine()->FindParm("-tools") == 0 && CommandLine()->FindParm("-nop4") == 0 )
 	{
 		char GameUI2Path[2048];
 		Q_snprintf(GameUI2Path, sizeof(GameUI2Path), "%s\\bin\\gameui2.dll", engine->GetGameDirectory());

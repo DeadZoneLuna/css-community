@@ -24,11 +24,7 @@ work.  If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
 
 Panel_QuitGame::Panel_QuitGame(vgui::VPANEL Parent, const char* PanelName) : BaseClass(nullptr, PanelName)
 {
-#ifdef MFS
-	vgui::HScheme Scheme = vgui::scheme()->LoadSchemeFromFile("resource/schemepanel.res", "SchemePanel");
-#else
 	vgui::HScheme Scheme = vgui::scheme()->LoadSchemeFromFile("resource2/schemepanel.res", "SchemePanel");
-#endif
 	SetScheme(Scheme);
 	
 	SetProportional(false);

@@ -94,12 +94,6 @@ $Project "GameUI2"
 
 	$Folder	"Source Files"
 	{
-		$Folder	"Controls"
-		{
-			$File	"$SRCDIR\game\gameui2\VControlsListPanel.cpp"
-			$File	"$SRCDIR\game\gameui2\VControlsListPanel.h"
-		}
-		
 		$Folder	"Buttons"
 		{
 			$File	"$SRCDIR\game\gameui2\button_mainmenu.cpp"
@@ -116,8 +110,6 @@ $Project "GameUI2"
 
 		$Folder	"Panels"
 		{
-			$File	"$SRCDIR\game\gameui2\panel_options_subkeyboard.cpp"
-			$File	"$SRCDIR\game\gameui2\panel_options_subkeyboard.h"
 			$File	"$SRCDIR\game\gameui2\panel_options.cpp"
 			$File	"$SRCDIR\game\gameui2\panel_options.h"
 			$File	"$SRCDIR\game\gameui2\panel_quitgame.cpp"
