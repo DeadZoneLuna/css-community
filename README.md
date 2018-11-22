@@ -15,6 +15,7 @@ Currently this mod is in a pre-alpha state so don’t expected any class of bugs
 - [ ] Implement the Vote System so everyone can vote without using plugins
 - [ ] Implement Class Based Hands Like CSGO
 - [ ] Implement CSPromod's Shadows RTT
+- [ ] Bring back to life the shield.
 
 ### Warning
 
@@ -23,13 +24,13 @@ Although this mod is based on SourcePlusPlus's CSS Port, some things will not wo
 ### Bug
 
 - The prop’s physics is a little... estranged... well sometimes you pass the entire prop but other times the prop push the player.
-- The leaked scoreboard doesn’t work in the Source 2013 so the cheap way to fix this is using the SDK Template has placeholder.
 - The round DONT end don't import if the time is 0:00 just the round doesn’t end.
 - The flashbang doesn’t disappear sometimes.
 - The Animation system used in the leak is the same in the HL2MP it used the base_playeranimstate so this animsystem don’t come whit a MP support so you can see the player making the walk anim but stuck at the first frame.
   The only way to fix this is redo the animation system to make work whit multiplayer_animstates.
 - The lighting in the classmenu for the models is bugged don’t used the color white it used estranged colors.
 - The Dynamic crosshair it’s not the same to the he original CSS someone of the cvars don’t work.
+- Using the Bots may cause the game crash. 
 
 ### Credits
 
@@ -37,4 +38,6 @@ Although this mod is based on SourcePlusPlus's CSS Port, some things will not wo
 | :----------------------------: | :----------------------------------------------------------: |
 | **Joshua Ashton And SCell555** |            **Original creator of SourcePlusPlus**            |
 |         **PeterScout**         | **Modified SourcePlusPlus's CSS (witch is based this port)** |
+|         **NicolasDe**          |                 **For his amazing GameUI2**                  |
+|       **TotallyMephis**        | **Creator of Zombie Master: Reborn and some code that is used here** |
 
