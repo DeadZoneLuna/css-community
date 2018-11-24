@@ -39,5 +39,5 @@ Although this mod is based on SourcePlusPlus's CSS Port, some things will not wo
 | **Joshua Ashton And SCell555** |            **Original creator of SourcePlusPlus**            |
 |         **PeterScout**         | **Modified SourcePlusPlus's CSS (witch is based this port)** |
 |         **NicolasDe**          |                 **For his amazing GameUI2**                  |
-|       **TotallyMephis**        | **Creator of Zombie Master: Reborn and some code that is used here** |
-
+|        **TotallyMehis**        | **Creator of Zombie Master: Reborn and some code that is used here** |
+|         **Spirrwell**          |                   **FMOD Implementation**                    |

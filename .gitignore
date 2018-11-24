@@ -86,6 +86,7 @@ mp/game/*/cfg/settings.scr
 mp/game/*/cfg/BuyPresets_ter.vdf
 mp/game/*/cfg/BuyPresets_ct.vdf
 mp/game/*/custom/
+mp/game/*/bin/fmod.dll
 mp/game/*/download/
 mp/game/*/downloadlists/
 mp/game/*/screenshots/

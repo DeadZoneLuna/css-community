@@ -14,8 +14,14 @@ $Configuration
 	$Compiler
 	{
 		$AdditionalIncludeDirectories		"$BASE;.\cstrike\vgui,.\cstrike\buy_presets,.\cstrike,$SRCDIR\game\shared\cstrike,$SRCDIR\game\gameui2"
-		$AdditionalIncludeDirectories		"$BASE;.\community,$SRCDIR\game\shared\community"
+		$AdditionalIncludeDirectories		"$BASE;.\community,$SRCDIR\game\shared\community,$SRCDIR\thirdparty\fmod\inc"
 		$PreprocessorDefinitions			"$BASE;CSTRIKE_DLL;GAMEUI2;COMMUNITY_CLIENT_DLL;GLOWS_ENABLE"
+	}
+
+	$Linker
+	{
+		$AdditionalLibraryDirectories	"$BASE;$SRCDIR\thirdparty\fmod\lib"
+		$AdditionalDependencies			"$BASE fmod_vc.lib" [$WIN32]
 	}
 }
 
@@ -32,6 +38,16 @@ $Project "Client"
 		$File	"hud_voicestatus.cpp"
 		$File	"$SRCDIR\game\shared\predicted_viewmodel.cpp"
 		$File	"$SRCDIR\game\shared\predicted_viewmodel.h"
+
+		$Folder "FMOD"
+		{
+			$File	"fmod\fmodmanager.cpp"
+			$File	"fmod\fmodmanager.h"
+			$File	"fmod\fmod_filesystem.cpp"
+			$File	"fmod\fmod_filesystem.h"
+			$File	"fmod\c_sound_fmod.cpp"
+			$File	"fmod\c_sound_fmod.h"
+		}
 
 		$Folder	"Counter Strike Source Community DLL"
 		{
@@ -199,4 +215,9 @@ $Project "Client"
 			$File	"game_controls\classmenu.h"
 		}
 	}
+	
+	$Folder	"Link Libraries"
+	{
+		$ImpLib		"$SRCDIR\thirdparty\fmod\lib\fmod_vc" [$WIN32]
+ 	}
 }

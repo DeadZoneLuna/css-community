@@ -39,6 +39,12 @@ $Project "Server"
 		$File	"team_spawnpoint.cpp"
 		$File	"team_spawnpoint.h"
 		$File	"$SRCDIR\game\shared\teamplayroundbased_gamerules.cpp"
+		
+		$Folder "FMOD"
+		{
+			$File "fmod\sound_fmod.cpp"
+			$File "fmod\sound_fmod.h"
+		}
 
 		$Folder	"Counter Strike Source Community DLL"
 		{
