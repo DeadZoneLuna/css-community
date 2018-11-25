@@ -267,5 +267,5 @@ MainMenuHelper::MainMenuHelper(MainMenu* Menu, vgui::Panel* Parent) : BaseClass(
 {
 	Menu->SetParent(this);
 	Menu->MakeReadyForUse();
-	Menu->SetZPos(0);
+	Menu->SetZPos(1);
 }

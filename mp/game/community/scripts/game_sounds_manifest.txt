@@ -4,7 +4,6 @@ game_sounds_manifest
 	 "precache_file"  	"scripts/game_sounds_bots.txt"
 	 
 	 "preload_file"  	"scripts/game_sounds.txt"
-	 "preload_file"  	"scripts/game_sounds_ui.txt"
 	 "preload_file"  	"scripts/game_sounds_physics.txt"	
 	 "preload_file"  	"scripts/game_sounds_radio.txt"
 	 "preload_file"  	"scripts/game_sounds_weapons.txt"
