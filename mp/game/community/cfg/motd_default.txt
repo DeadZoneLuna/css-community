@@ -32,8 +32,28 @@ a:hover {
 </head>
 <body scroll="no">
 <pre>
-You are playing Counter-Strike Source: Community Edition
-Have Fun!.
+Welcome to Counter-Strike Source Sommunity
+Play nice.
+
+Our map rotation is:
+- Italy
+- Dust
+- Aztec
+- Cobble
+- Office Complex
+- Chateau
+- Dust II
+- Piranesi
+- Havana
+- Prodigy
+- Compound
+- Train
+- Tides
+- Port
+- Inferno
+- Assault
+- Nuke
+- Militia
 </pre>
 </body>
 </html>
