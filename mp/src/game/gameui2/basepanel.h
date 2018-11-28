@@ -23,12 +23,19 @@ public:
 	static void Create();
 	virtual void OnThink();
 	virtual void PaintBlurMask();
+	
+	virtual bool IsBackgroundMusicPlaying();
+	virtual bool StartBackgroundMusic(float Volume);
+	virtual void UpdateBackgroundMusicVolume(float Volume);
+	virtual void ReleaseBackgroundMusic();
 
 	virtual vgui::VPANEL GetVPanel();
 	virtual MainMenu* GetMainMenuPanel() const { return MainMenuPanel; }
 	virtual MainMenuHelper* GetMainMenuHelperPanel() const { return MainMenuHelperPanel; }
 
 private:
+	CUtlString BackgroundMusic;
+	int32 BackgroundMusicGUID;
 
 	MainMenu* MainMenuPanel;
 	MainMenuHelper* MainMenuHelperPanel;

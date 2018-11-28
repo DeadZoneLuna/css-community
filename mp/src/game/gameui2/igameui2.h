@@ -23,6 +23,7 @@ abstract_class IGameUI2 : public IBaseInterface
 {
 public:
 	virtual void Initialize(CreateInterfaceFn AppFactory) = 0;
+	virtual void Connect(CreateInterfaceFn GameFactory) = 0;
 	virtual void Shutdown() = 0;
 
 	virtual void OnInitialize() = 0;

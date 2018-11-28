@@ -38,8 +38,9 @@ $Configuration
 	
 	$Compiler
 	{
-		$AdditionalIncludeDirectories	"$BASE;.\;$SRCDIR\vgui2\include;$SRCDIR\vgui2\controls;$SRCDIR\game\gameui2;..\..\public"
-		$PreprocessorDefinitions		"$BASE;GAMEUI2_DLL;VERSION_SAFE_STEAM_API_INTERFACES;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead"
+		$AdditionalIncludeDirectories	"$BASE;.\;$SRCDIR\vgui2\include;$SRCDIR\vgui2\controls;$SRCDIR\game\client;$SRCDIR\game\client\game_controls,..\..\public"
+		$AdditionalIncludeDirectories	"$BASE;$SRCDIR\game\gameui2;$SRCDIR\game\gameui2\vgui2;$SRCDIR\game\gameui2\buttons;$SRCDIR\game\gameui2\panels"
+		$PreprocessorDefinitions		"$BASE;SUPPRESS_INVALID_PARAMETER_NO_INFO;_CRT_NO_VA_START_VALIDATION;NO_STRING_T;GAMEUI2_DLL;GAMEUI2_EXPORTS;CLIENT_DLL;VECTOR;VERSION_SAFE_STEAM_API_INTERFACES;DISABLE_PROTECTED_THINGS;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead"
 	}
 
 	$Linker
@@ -48,22 +49,219 @@ $Configuration
 		$SystemFrameworks				"Carbon" [$OSXALL]
 		$SystemLibraries				"rt" [$LINUXALL]
 		$IgnoreImportLibrary			"TRUE"
-		$AdditionalDependencies			"$BASE winmm.lib"	[$WIN32]
-		$AdditionalDependencies			"$BASE wsock32.lib Ws2_32.lib" [$BUILD_REPLAY]
+		$AdditionalDependencies			"$BASE Ws2_32.lib odbc32.lib odbccp32.lib Shlwapi.lib winmm.lib" [$WIN32]
+		$IgnoreSpecificLibrary			"libc;libcd;libcmtd;msvcrt"
 	}
 }
 
 $Project "GameUI2"
 {
-	$Folder	"Base Files"
+	$Folder	"Source Files"
 	{
-		$File	"$SRCDIR\public\vgui_controls\vgui_controls.cpp"
-		$File	"$SRCDIR\common\language.cpp"
-	}
+		$Folder	"GameUI - Embedded"
+		{
+			$Folder "External Stuff"
+			{
+				$File	"$SRCDIR\public\vgui_controls\vgui_controls.cpp"
+				$File	"$SRCDIR\common\language.cpp"
+			}
+			
+			$Folder	"Base Files"
+			{
+				$File	"BackgroundMenuButton.cpp"
+				$File	"GameConsole.cpp"
+				$File	"LogoFile.cpp"
+				$File	"ModInfo.cpp"
+				$File	"MouseMessageForwardingPanel.cpp"
+				$File	"PanelListPanel.cpp"
+				$File	"RunGameEngine.cpp"
+				$File	"ScriptObject.cpp"
+				$File	"Sys_Utils.cpp"
+				$File	"TextEntryBox.cpp"
+			}
+			
+			$Folder	"Controls"
+			{
+				$File	"BitmapImagePanel.cpp"
+				$File	"CommandCheckButton.cpp"
+				$File	"CvarNegateCheckButton.cpp"
+				$File	"CvarSlider.cpp"
+				$File	"CvarTextEntry.cpp"
+				$File	"CvarToggleCheckButton.cpp"
+				$File	"KeyToggleCheckButton.cpp"
+				$File	"LabeledCommandComboBox.cpp"
+				$File	"URLButton.cpp"
+				$File	"vcontrolslistpanel.cpp"
+			}
 
+			$Folder	"Dialogs"
+			{
+				$File	"ContentControlDialog.cpp"
+				$File	"GameConsoleDialog.cpp"
+				$File	"MultiplayerAdvancedDialog.cpp"
+				$File	"PlayerListDialog.cpp"
+				$File	"LoadingDialog.cpp"
+				$File	"BaseSaveGameDialog.cpp"
+				$File	"CreateMultiplayerGameBotPage.cpp"
+				$File	"CreateMultiplayerGameDialog.cpp"
+				$File	"CreateMultiplayerGameGameplayPage.cpp"
+				$File	"CreateMultiplayerGameServerPage.cpp"
+			}
+
+			$Folder	"Options Dialog"
+			{
+				$File	"OptionsDialog.cpp"
+				$File	"OptionsSubAudio.cpp"
+				$File	"OptionsSubDifficulty.cpp"
+				$File	"OptionsSubGame.cpp"
+				$File	"OptionsSubKeyboard.cpp"
+				$File	"OptionsSubMouse.cpp"
+				$File	"OptionsSubMultiplayer.cpp"
+				$File	"OptionsSubPortal.cpp"
+				$File	"OptionsSubVideo.cpp"
+				$File	"OptionsSubVoice.cpp"
+			}
+		}
+		
+		$Folder	"GameUI2"
+		{
+			$Folder	"Buttons"
+			{
+				$File	"$SRCDIR\game\gameui2\buttons\button_mainmenu.cpp"
+				$File	"$SRCDIR\game\gameui2\buttons\button_panel.cpp"
+			}
+			
+			$Folder	"Main menu"
+			{
+				$File	"$SRCDIR\game\gameui2\mainmenu.cpp"
+			}
+
+			$Folder	"Panels"
+			{
+				$File	"$SRCDIR\game\gameui2\panels\panel_options.cpp"
+				$File	"$SRCDIR\game\gameui2\panels\panel_quitgame.cpp"
+			}
+
+			$Folder	"VGUI 2D"
+			{
+				$File	"$SRCDIR\game\gameui2\vgui2d\button2d.cpp"
+				$File	"$SRCDIR\game\gameui2\vgui2d\frame2d.cpp"
+				$File	"$SRCDIR\game\gameui2\vgui2d\panel2d.cpp"
+			}
+
+			$File	"$SRCDIR\game\gameui2\basepanel.cpp"
+			$File	"$SRCDIR\game\gameui2\gameui2_util.cpp"
+			$File	"$SRCDIR\game\gameui2\gameui2_interface.cpp"
+		}
+
+	}
+	
 	$Folder	"Header Files"
 	{
-		$File	"$SRCDIR\game\gameui2\igameui2.h"
+		$Folder	"GameUI - Embedded"
+		{
+			$Folder	"Base Header Files"
+			{
+				$File	"BackgroundMenuButton.h"
+				$File	"CDKeyEntryDialog.h"
+				$File	"EngineInterface.h"
+				$File	"GameConsole.h"
+				$File	"LoadingDialog.h"
+				$File	"ModInfo.h"
+				$File	"MouseMessageForwardingPanel.h"
+				$File	"PanelListPanel.h"
+				$File	"ScriptObject.h"
+				$File	"Sys_Utils.h"
+				$File	"TextEntryBox.h"
+			}
+			
+			$Folder	"Controls"
+			{
+				$File	"BitmapImagePanel.h"
+				$File	"CommandCheckButton.h"
+				$File	"CvarNegateCheckButton.h"
+				$File	"CvarSlider.h"
+				$File	"CvarTextEntry.h"
+				$File	"CvarToggleCheckButton.h"
+				$File	"KeyToggleCheckButton.h"
+				$File	"LabeledCommandComboBox.h"
+				$File	"URLButton.h"
+				$File	"vcontrolslistpanel.h"
+			}
+
+			$Folder	"Dialogs"
+			{
+				$File	"ContentControlDialog.h"
+				$File	"GameConsoleDialog.h"
+				$File	"MultiplayerAdvancedDialog.h"
+				$File	"PlayerListDialog.h"
+				$File	"BaseSaveGameDialog.h"
+				$File	"CreateMultiplayerGameBotPage.h"
+				$File	"CreateMultiplayerGameDialog.h"
+				$File	"CreateMultiplayerGameGameplayPage.h"
+				$File	"CreateMultiplayerGameServerPage.h"
+			}
+
+			$Folder	"Options Dialog"
+			{
+				$File	"OptionsDialog.h"
+				$File	"OptionsSubAudio.h"
+				$File	"OptionsSubDifficulty.h"
+				$File	"OptionsSubGame.h"
+				$File	"OptionsSubKeyboard.h"
+				$File	"OptionsSubMouse.h"
+				$File	"OptionsSubMultiplayer.h"
+				$File	"OptionsSubPortal.h"
+				$File	"OptionsSubVideo.h"
+				$File	"OptionsSubVoice.h"
+			}
+			
+			$Folder	"Public Header Files"
+			{
+				$File	"$SRCDIR\public\iachievementmgr.h"
+				$File	"$SRCDIR\public\game\client\IGameClientExports.h"
+				$File	"$SRCDIR\common\GameUI\IGameConsole.h"
+				$File	"$SRCDIR\public\IGameUIFuncs.h"
+				$File	"$SRCDIR\public\tier1\interface.h"
+				$File	"$SRCDIR\common\IRunGameEngine.h"
+				$File	"$SRCDIR\common\IVGuiModule.h"
+				$File	"$SRCDIR\common\IVGuiModuleLoader.h"
+				$File	"$SRCDIR\public\savegame_version.h"
+				$File	"$SRCDIR\common\language.h"
+			}
+		}
+		
+		$Folder	"GameUI2"
+		{
+			$Folder	"Buttons"
+			{
+				$File	"$SRCDIR\game\gameui2\buttons\button_mainmenu.h"
+				$File	"$SRCDIR\game\gameui2\buttons\button_panel.h"
+			}
+			
+			$Folder	"Main menu"
+			{
+				$File	"$SRCDIR\game\gameui2\mainmenu.h"
+			}
+
+			$Folder	"Panels"
+			{
+				$File	"$SRCDIR\game\gameui2\panels\panel_options.h"
+				$File	"$SRCDIR\game\gameui2\panels\panel_quitgame.h"
+			}
+
+			$Folder	"VGUI 2D"
+			{
+				$File	"$SRCDIR\game\gameui2\vgui2d\button2d.h"
+				$File	"$SRCDIR\game\gameui2\vgui2d\frame2d.h"
+				$File	"$SRCDIR\game\gameui2\vgui2d\panel2d.h"
+			}
+
+			$File	"$SRCDIR\game\gameui2\basepanel.h"
+			$File	"$SRCDIR\game\gameui2\igameui2.h"
+			$File	"$SRCDIR\game\gameui2\gameui2_util.h"
+			$File	"$SRCDIR\game\gameui2\gameui2_interface.h"		
+		}
 	}
 
 	$Folder	"Link Libraries"
@@ -91,44 +289,4 @@ $Project "GameUI2"
 		$Libexternal "$LIBCOMMON/libcurlssl" [$LINUXALL]
 		$Libexternal "$LIBCOMMON/libssl" [$LINUXALL]
  	}
-
-	$Folder	"Source Files"
-	{
-		$Folder	"Buttons"
-		{
-			$File	"$SRCDIR\game\gameui2\button_mainmenu.cpp"
-			$File	"$SRCDIR\game\gameui2\button_mainmenu.h"
-			$File	"$SRCDIR\game\gameui2\button_panel.cpp"
-			$File	"$SRCDIR\game\gameui2\button_panel.h"
-		}
-		
-		$Folder	"Main menu"
-		{
-			$File	"$SRCDIR\game\gameui2\mainmenu.cpp"
-			$File	"$SRCDIR\game\gameui2\mainmenu.h"
-		}
-
-		$Folder	"Panels"
-		{
-			$File	"$SRCDIR\game\gameui2\panel_options.cpp"
-			$File	"$SRCDIR\game\gameui2\panel_options.h"
-			$File	"$SRCDIR\game\gameui2\panel_quitgame.cpp"
-			$File	"$SRCDIR\game\gameui2\panel_quitgame.h"
-		}
-
-		$Folder	"VGUI 2D"
-		{
-			$File	"$SRCDIR\game\gameui2\vgui2d\button2d.cpp"
-			$File	"$SRCDIR\game\gameui2\vgui2d\button2d.h"
-			$File	"$SRCDIR\game\gameui2\vgui2d\frame2d.cpp"
-			$File	"$SRCDIR\game\gameui2\vgui2d\frame2d.h"
-			$File	"$SRCDIR\game\gameui2\vgui2d\panel2d.cpp"
-			$File	"$SRCDIR\game\gameui2\vgui2d\panel2d.h"
-		}
-
-		$File	"$SRCDIR\game\gameui2\basepanel.cpp"
-		$File	"$SRCDIR\game\gameui2\basepanel.h"
-		$File	"$SRCDIR\game\gameui2\gameui2_interface.cpp"
-		$File	"$SRCDIR\game\gameui2\gameui2_interface.h"
-	}
 }
