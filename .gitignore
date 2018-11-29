@@ -19,6 +19,7 @@ ipch
 *.idb
 *.vcxproj
 *.sln
+*.csproj
 
 # OSX/Linux build products
 *.mak
@@ -87,6 +88,7 @@ mp/game/*/cfg/BuyPresets_ter.vdf
 mp/game/*/cfg/BuyPresets_ct.vdf
 mp/game/*/custom/
 mp/game/*/bin/fmod.dll
+mp/game/*/bin/HLLib.dll
 mp/game/*/download/
 mp/game/*/downloadlists/
 mp/game/*/screenshots/
@@ -102,3 +104,6 @@ mp/src/game/server/Debug_*/player\.obj\.enc
 mp/src/game/server/Debug_*/cs_player\.obj\.enc
 mp/src/thirdparty/hlib/sln/vs10/HLLib/Win32/*
 mp/src/thirdparty/hlib/sln/vs10/HLExtract/Win32/*
+mp/src/thirdparty/hlib/sln/vs10/HLExtract.Net/Win32/*
+mp/src/thirdparty/hlib/sln/vs10/HLExtract.Net/bin/Release/HLExtract.Net.exe
+mp/src/thirdparty/hlib/sln/vs10/HLExtract.Net/bin/Release/HLLib.x86.dll
