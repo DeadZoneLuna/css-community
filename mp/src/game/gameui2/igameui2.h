@@ -14,7 +14,6 @@ work.  If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
 #else
 #include "interface.h"
 #endif // GAMEUI2_DLL
-
 #include "vgui/VGUI.h"
 #include "mathlib/vector.h"
 #include "ivrenderview.h"

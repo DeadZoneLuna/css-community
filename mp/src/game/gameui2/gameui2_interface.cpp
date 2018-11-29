@@ -25,18 +25,18 @@ work.  If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
 #include "FileSystem.h"
 #include "GameUI2_Interface.h"
 #include "BasePanel.h"
-#include "Sys_Utils.h"
+//#include "Sys_Utils.h"
 #include "string.h"
 #include "tier0/icommandline.h"
 
 // interface to engine
-#include "EngineInterface.h"
+//#include "EngineInterface.h"
 //#include "VGuiSystemModuleLoader.h"
 #include "bitmap/TGALoader.h"
-#include "GameConsole.h"
-#include "LoadingDialog.h"
-#include "CDKeyEntryDialog.h"
-#include "ModInfo.h"
+//#include "GameConsole.h"
+//#include "LoadingDialog.h"
+//#include "CDKeyEntryDialog.h"
+//#include "ModInfo.h"
 
 // vgui2 interface
 // note that GameUI2 project uses ..\vgui2\include, not ..\utils\vgui\include

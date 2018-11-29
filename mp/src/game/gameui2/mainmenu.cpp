@@ -190,6 +190,10 @@ void MainMenu::DrawLogo()
 void MainMenu::Paint()
 {
 	BaseClass::Paint();
+	
+	// TODO: Add script settings
+	vgui::surface()->DrawSetColor(Color(0, 0, 0, 255));
+	vgui::surface()->DrawFilledRectFade(0, 0, GetWide(), GetTall(), 255, 0, true);
 
 	DrawMainMenu();
 	DrawLogo();
